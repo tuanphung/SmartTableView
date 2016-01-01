@@ -1,5 +1,5 @@
 #LazyTableView
-Simply the way to display multiple cell types on TableView.
+New way to render model on UITableViewCell. Allow displaying multiple models and cells automatically.
 
 ## Requirements
 - iOS 8.0+ / Mac OS X 10.9+
