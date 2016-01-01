@@ -6,11 +6,14 @@
 //  Copyright © 2015 Silicon Straits. All rights reserved.
 //
 
-import HCSStarRatingView
+import Foundation
+import SwiftyJSON
 
 class Tip {
     // Properties
     var name: String = ""
-    var description: String?    
-    var image: UIImage?
+    
+    init(json: JSON) {
+        self.name = json["name"].stringValue
+    }
 }

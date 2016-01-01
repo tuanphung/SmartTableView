@@ -21,6 +21,11 @@
 
 import UIKit
 import LazyTableView
+import SwiftyJSON
+
+enum ModelType: Int {
+    case Restaurant, Hotel, Tip, Event
+}
 
 class ViewController: UIViewController {
     @IBOutlet var tableView: LazyTableView!
@@ -28,39 +33,39 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Lazy"
+        self.title = "LazyTableView"
         
-        self.tableView.register([TipTableViewCell.self, RestaurantTableViewCell.self])
+        self.tableView.register([RestaurantTableViewCell.self,
+                                HotelTableViewCell.self,
+                                TipTableViewCell.self,
+                                EventTableViewCell.self])
         
-        self.tableView.addItems(self.generateData())
+        self.tableView.addItems(self.generateModels())
     }
     
-    func generateData() -> [AnyObject] {
-        var data = [AnyObject]()
+    func generateModels() -> [AnyObject] {
+        var models = [AnyObject]()
         
-        data.append(self.generateTip())
-        data.append(self.generateRetaurant())
-        data.append(self.generateTip())
-        data.append(self.generateRetaurant())
-        data.append(self.generateTip())
-        data.append(self.generateRetaurant())
+        let path = NSBundle.mainBundle().pathForResource("data", ofType: "json")
+        let data = NSData(contentsOfFile: path!)!
+        let json = JSON(data: data)
         
-        return data
-    }
-    
-    func generateTip() -> Tip {
-        let tip = Tip()
-        tip.name = "Haha"
-        tip.description = "Hoho"
-        tip.image = UIImage(named: "bg_\(arc4random_uniform(UInt32(7)))")
-        return tip
-    }
-
-    func generateRetaurant() -> Restaurant {
-        let restaurant = Restaurant()
-        restaurant.name = "Haha"
-        restaurant.image = UIImage(named: "bg_\(arc4random_uniform(UInt32(7)))")
-        return restaurant
+        for (_, subJson) in json {
+            if let type = ModelType(rawValue: subJson["type"].intValue) {
+                switch type {
+                case .Restaurant:
+                    models.append(Restaurant(json: subJson))
+                case .Hotel:
+                    models.append(Hotel(json: subJson))
+                case .Tip:
+                    models.append(Tip(json: subJson))
+                case .Event:
+                    models.append(Event(json: subJson))
+                }
+            }
+        }
+        
+        return models
     }
 
 }

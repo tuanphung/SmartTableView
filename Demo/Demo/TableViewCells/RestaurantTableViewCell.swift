@@ -16,9 +16,7 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var starRatingView: HCSStarRatingView!
-    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var priceRateLabel: UILabel!
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -40,10 +38,12 @@ extension RestaurantTableViewCell: LazyTableViewCellProtocol {
     func configureCell(model: AnyObject) {
         if let restaurant = model as? Restaurant {
             self.titleLabel.text = restaurant.name
-            self.reviewLabel.text = "\(restaurant.numRating) review" + (restaurant.numRating > 1 ? "s" : "")
-            self.topImageView.image = restaurant.image
+            self.reviewLabel.text = "\(restaurant.numberOfReviews) review" + (restaurant.numberOfReviews > 1 ? "s" : "")
+            self.topImageView.image = UIImage(named: restaurant.imageName)
     
             self.starRatingView.value = CGFloat(restaurant.rating)
+            
+            self.priceLabel.text = "\(restaurant.price) $"
         }
     }
 }

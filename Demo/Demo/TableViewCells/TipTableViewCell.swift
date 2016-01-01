@@ -12,8 +12,6 @@ import LazyTableView
 class TipTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -29,14 +27,12 @@ extension TipTableViewCell: LazyTableViewCellProtocol {
     }
     
     static func height(model: AnyObject) -> CGFloat {
-        return 240
+        return 60
     }
     
     func configureCell(model: AnyObject) {
         if let tip = model as? Tip {
             self.nameLabel.text = tip.name
-            self.contentLabel.text = tip.description
-            self.backgroundImageView.image = tip.image
         }
     }
 }

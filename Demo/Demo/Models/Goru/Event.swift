@@ -6,21 +6,28 @@
 //  Copyright © 2015 Silicon Straits. All rights reserved.
 //
 
-import HCSStarRatingView
+import Foundation
+import SwiftyJSON
 
 class Event {
     // Properties
     var name: String = ""
-    var images = [String]()
+    var imageName: String = ""
+    var numberOfReviews: Int = 0
+    var rating: Double = 0
     var startDate: NSDate?
     var endDate: NSDate?
     
-    var imageMedium: String = ""
-    var imageLarge: String = ""
-    var numRating: Int = 0
-    var isFavourited: Bool = false
-    var dateFrom: NSDate?
-    var dateTo: NSDate?
-    var rating: Double = 0
-    var shortDesctiption: String?
+    init(json: JSON) {
+        self.name = json["name"].stringValue
+        self.imageName = json["imageName"].stringValue
+        self.rating = json["rating"].doubleValue
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "yyyyMMdd"
+        
+        self.startDate = dateFormatter.dateFromString(json["startDate"].stringValue)
+        self.endDate = dateFormatter.dateFromString(json["endDate"].stringValue)
+    }
 }

@@ -5,14 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="SFUIDisplay-Light.otf">
-            <string>SFUIDisplay-Light</string>
-        </mutableArray>
         <mutableArray key="SFUIDisplay-Medium.otf">
             <string>SFUIDisplay-Medium</string>
         </mutableArray>
         <mutableArray key="SFUIText-Regular.otf">
-            <string>SFUIText-Regular</string>
             <string>SFUIText-Regular</string>
             <string>SFUIText-Regular</string>
             <string>SFUIText-Regular</string>
@@ -22,14 +18,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StayTableViewCell" rowHeight="132" id="KGk-i7-Jjw" userLabel="StayTableViewCell" customClass="StayTableViewCell" customModule="Demo" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelTableViewCell" rowHeight="132" id="KGk-i7-Jjw" userLabel="HotelTableViewCell" customClass="HotelTableViewCell" customModule="Demo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="371" height="250"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="371" height="249.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meshup-background-deals" translatesAutoresizingMaskIntoConstraints="NO" id="Tjp-nF-yvf" userLabel="Top Image View">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tjp-nF-yvf" userLabel="Top Image View">
                         <rect key="frame" x="0.0" y="0.0" width="371" height="160"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="160" id="jS1-mu-sxx"/>
@@ -38,6 +34,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIL-J7-Q66" userLabel="Info View">
                         <rect key="frame" x="0.0" y="160" width="371" height="82"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Absinthe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYK-Yk-9af" userLabel="Dine Title">
+                                <rect key="frame" x="15" y="10" width="341" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="3hB-5t-jBo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8Q-re-Qr0" userLabel="Rating View" customClass="HCSStarRatingView">
                                 <rect key="frame" x="15" y="40" width="90" height="15"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,11 +63,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance-icon" translatesAutoresizingMaskIntoConstraints="NO" id="wQy-fY-S3Q" userLabel="Distance Icon">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-distance" translatesAutoresizingMaskIntoConstraints="NO" id="wQy-fY-S3Q" userLabel="Distance Icon">
                                 <rect key="frame" x="15" y="65" width="7" height="11"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3.8 miles away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at5-hD-3UM" userLabel="Distance Label">
-                                <rect key="frame" x="30" y="65" width="120" height="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.8 miles away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at5-hD-3UM" userLabel="Distance Label">
+                                <rect key="frame" x="30" y="64" width="120" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="OkF-cQ-pPF"/>
                                     <constraint firstAttribute="height" constant="15" id="wRi-Ja-52K"/>
@@ -77,44 +81,28 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAm-fP-WJS" userLabel="Price Label">
-                                <rect key="frame" x="231" y="53" width="120" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="5PI-ca-NQx"/>
-                                    <constraint firstAttribute="height" constant="33" id="OF4-c0-PDd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="22"/>
-                                <color key="textColor" red="0.086274509799999996" green="0.68627450980000004" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="OF4-c0-PDd"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate/night from" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA5-5u-5oE" userLabel="Price rate Label">
-                                <rect key="frame" x="251" y="37" width="100" height="16"/>
+                                <rect key="frame" x="256" y="10" width="100" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="AG7-v7-MUI"/>
-                                    <constraint firstAttribute="height" constant="16" id="Y2H-BV-NNM"/>
+                                    <constraint firstAttribute="height" constant="25" id="Y2H-BV-NNM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Absinthe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYK-Yk-9af" userLabel="Dine Title">
-                                <rect key="frame" x="15" y="10" width="341" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="3hB-5t-jBo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAm-fP-WJS" userLabel="Price Label">
+                                <rect key="frame" x="300.5" y="34.5" width="55.5" height="26"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="22"/>
+                                <color key="textColor" red="0.086274509799999996" green="0.68627450980000004" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AA5-5u-5oE" firstAttribute="trailing" secondItem="sAm-fP-WJS" secondAttribute="trailing" id="0oP-sL-mlV"/>
-                            <constraint firstAttribute="trailing" secondItem="sAm-fP-WJS" secondAttribute="trailing" constant="20" id="2VL-qg-yQ6"/>
+                            <constraint firstAttribute="trailing" secondItem="sAm-fP-WJS" secondAttribute="trailing" constant="15" id="2VL-qg-yQ6"/>
+                            <constraint firstItem="sAm-fP-WJS" firstAttribute="centerY" secondItem="y8Q-re-Qr0" secondAttribute="centerY" id="4fW-8z-GK9"/>
                             <constraint firstItem="sAm-fP-WJS" firstAttribute="top" secondItem="AA5-5u-5oE" secondAttribute="bottom" id="Ahl-yh-zHr"/>
                             <constraint firstItem="at5-hD-3UM" firstAttribute="leading" secondItem="wQy-fY-S3Q" secondAttribute="trailing" constant="8" id="HDE-E6-CD2"/>
                             <constraint firstAttribute="trailing" secondItem="iYK-Yk-9af" secondAttribute="trailing" constant="15" id="InU-Kl-33P"/>
@@ -126,7 +114,9 @@
                             <constraint firstItem="at5-hD-3UM" firstAttribute="centerY" secondItem="wQy-fY-S3Q" secondAttribute="centerY" id="ajN-NU-UVv"/>
                             <constraint firstItem="at5-hD-3UM" firstAttribute="centerY" secondItem="wQy-fY-S3Q" secondAttribute="centerY" id="d4f-yT-0N0"/>
                             <constraint firstAttribute="bottom" secondItem="wQy-fY-S3Q" secondAttribute="bottom" constant="6" id="kjd-oc-F6h"/>
+                            <constraint firstItem="AA5-5u-5oE" firstAttribute="centerY" secondItem="iYK-Yk-9af" secondAttribute="centerY" id="krn-Wx-4Eh"/>
                             <constraint firstItem="y8Q-re-Qr0" firstAttribute="top" secondItem="iYK-Yk-9af" secondAttribute="bottom" constant="5" id="l51-JS-BN7"/>
+                            <constraint firstAttribute="trailing" secondItem="AA5-5u-5oE" secondAttribute="trailing" constant="15" id="pSU-Jp-rTe"/>
                             <constraint firstItem="wQy-fY-S3Q" firstAttribute="top" secondItem="y8Q-re-Qr0" secondAttribute="bottom" constant="10" id="vhL-W1-yrc"/>
                             <constraint firstAttribute="bottom" secondItem="at5-hD-3UM" secondAttribute="bottom" constant="4" id="w2X-vK-C8I"/>
                         </constraints>
@@ -135,21 +125,24 @@
                                 <exclude reference="vhL-W1-yrc"/>
                                 <exclude reference="d4f-yT-0N0"/>
                                 <exclude reference="w2X-vK-C8I"/>
+                                <exclude reference="Ahl-yh-zHr"/>
+                                <exclude reference="OT0-nx-Ple"/>
+                                <exclude reference="0oP-sL-mlV"/>
                             </mask>
                         </variation>
                     </view>
-                    <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-Ro-0t0" userLabel="Dine Tag">
-                        <rect key="frame" x="298" y="120" width="58" height="25"/>
+                    <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-Ro-0t0" userLabel="Tag">
+                        <rect key="frame" x="293" y="120" width="63" height="25"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcU-7R-k0W" userLabel="Stay">
-                                <rect key="frame" x="5" y="1" width="48" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcU-7R-k0W">
+                                <rect key="frame" x="5" y="1" width="53" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="rRV-GD-Q7O"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Stay" image="stay-tag-icon">
+                                <state key="normal" title="Hotel" image="icon-hotel">
                                     <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -162,18 +155,12 @@
                             <constraint firstAttribute="trailing" secondItem="FcU-7R-k0W" secondAttribute="trailing" constant="5" id="uTw-kd-CVp"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <real key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-bookmark-inactive" translatesAutoresizingMaskIntoConstraints="NO" id="YCV-0R-qYH" userLabel="Bookmark Icon">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="YCV-0R-qYH" userLabel="Bookmark Icon">
                         <rect key="frame" x="338" y="15" width="13" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Y3V-pe-5h9"/>
@@ -200,17 +187,6 @@
                                     <constraint firstItem="PHb-hb-0IU" firstAttribute="centerX" secondItem="WwK-3p-VzB" secondAttribute="centerX" id="b75-WJ-zrW"/>
                                     <constraint firstItem="PHb-hb-0IU" firstAttribute="centerY" secondItem="WwK-3p-VzB" secondAttribute="centerY" id="p8E-oa-ewJ"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.46274509803921571" green="0.95686274509803915" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fanstatic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbQ-hk-Lil">
                                 <rect key="frame" x="34" y="4.5" width="53.5" height="15.5"/>
@@ -247,8 +223,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="distanceIconView" destination="wQy-fY-S3Q" id="pAz-Am-8xw"/>
-                <outlet property="distanceLabel" destination="at5-hD-3UM" id="9VU-Ab-MDT"/>
                 <outlet property="priceLabel" destination="sAm-fP-WJS" id="WQE-Kx-0AG"/>
                 <outlet property="ratingPointLabel" destination="PHb-hb-0IU" id="Nc3-rq-ho0"/>
                 <outlet property="ratingTextLabel" destination="IbQ-hk-Lil" id="3di-VM-3u9"/>
@@ -260,9 +234,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="distance-icon" width="7" height="11"/>
-        <image name="icon-bookmark-inactive" width="13" height="21"/>
-        <image name="meshup-background-deals" width="750" height="372"/>
-        <image name="stay-tag-icon" width="12" height="14"/>
+        <image name="icon-bookmark" width="13" height="21"/>
+        <image name="icon-distance" width="7" height="11"/>
+        <image name="icon-hotel" width="12" height="14"/>
     </resources>
 </document>

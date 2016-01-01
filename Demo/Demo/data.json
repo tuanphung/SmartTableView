@@ -1,0 +1,66 @@
+[
+{
+    "type": 0,
+    "name": "Restaurant 1",
+    "imageName": "bg_4",
+    "price": 100,
+    "numberOfReviews": 10,
+    "rating": 4.5
+},
+{
+    "type": 0,
+    "name": "Restaurant 2",
+    "imageName": "bg_4",
+    "price": 100,
+    "numberOfReviews": 10,
+    "rating": 4.5
+},
+{
+     "type": 1,
+     "name": "Hotel 1",
+     "imageName": "bg_1",
+     "price": 100,
+     "userRating": 9.5,
+     "rating": 4
+},
+ {
+ "type": 0,
+ "name": "Restaurant 1",
+ "imageName": "bg_4",
+ "price": 100,
+ "numberOfReviews": 10,
+ "rating": 4.5
+ },
+ {
+ "type": 0,
+ "name": "Restaurant 2",
+ "imageName": "bg_4",
+ "price": 100,
+ "numberOfReviews": 10,
+ "rating": 4.5
+ },
+ {
+ "type": 1,
+ "name": "Hotel 1",
+ "imageName": "bg_1",
+ "price": 100,
+ "userRating": 9.5,
+ "rating": 4
+ },
+{
+     "type": 3,
+     "name": "Event 1",
+     "imageName": "bg_1",
+     "rating": 4,
+     "startDate": "20160101",
+     "endateDate": "20160110",
+},
+{
+    "type": 2,
+    "name": "Tip Tip Tip 1",
+},
+{
+    "type": 2,
+    "name": "Tip Tip Tip 2",
+},
+]
