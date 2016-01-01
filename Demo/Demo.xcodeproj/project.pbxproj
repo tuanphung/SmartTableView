@@ -12,10 +12,6 @@
 		8204B15A1B9AD5B1005B658F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8204B1581B9AD5B1005B658F /* Main.storyboard */; };
 		8204B15C1B9AD5B1005B658F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8204B15B1B9AD5B1005B658F /* Assets.xcassets */; };
 		8204B15F1B9AD5B1005B658F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8204B15D1B9AD5B1005B658F /* LaunchScreen.storyboard */; };
-		822FAA211C36284000E48CDF /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA041C36284000E48CDF /* Restaurant.swift */; };
-		822FAA221C36284000E48CDF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA051C36284000E48CDF /* Event.swift */; };
-		822FAA261C36284000E48CDF /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA091C36284000E48CDF /* Hotel.swift */; };
-		822FAA271C36284000E48CDF /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA0A1C36284000E48CDF /* Tip.swift */; };
 		822FAA381C36284000E48CDF /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA1D1C36284000E48CDF /* TipTableViewCell.swift */; };
 		822FAA391C36284000E48CDF /* TipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822FAA1E1C36284000E48CDF /* TipTableViewCell.xib */; };
 		822FAA3C1C36339000E48CDF /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA3A1C36339000E48CDF /* RestaurantTableViewCell.swift */; };
@@ -25,6 +21,10 @@
 		822FAA431C36BCAD00E48CDF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 822FAA421C36BCAD00E48CDF /* data.json */; };
 		822FAA461C36C7E000E48CDF /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA441C36C7E000E48CDF /* EventTableViewCell.swift */; };
 		822FAA471C36C7E000E48CDF /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822FAA451C36C7E000E48CDF /* EventTableViewCell.xib */; };
+		822FAA4C1C36D0BE00E48CDF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA481C36D0BE00E48CDF /* Event.swift */; };
+		822FAA4D1C36D0BE00E48CDF /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA491C36D0BE00E48CDF /* Hotel.swift */; };
+		822FAA4E1C36D0BE00E48CDF /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA4A1C36D0BE00E48CDF /* Restaurant.swift */; };
+		822FAA4F1C36D0BE00E48CDF /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FAA4B1C36D0BE00E48CDF /* Tip.swift */; };
 		A605E9A913C68F93919B3350 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB854E4A72DB90E379CE3205 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,10 +56,6 @@
 		8204B1601B9AD5B1005B658F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8204B1651B9AD5B1005B658F /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8204B1701B9AD5B1005B658F /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		822FAA041C36284000E48CDF /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		822FAA051C36284000E48CDF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		822FAA091C36284000E48CDF /* Hotel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
-		822FAA0A1C36284000E48CDF /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		822FAA1D1C36284000E48CDF /* TipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipTableViewCell.swift; sourceTree = "<group>"; };
 		822FAA1E1C36284000E48CDF /* TipTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipTableViewCell.xib; sourceTree = "<group>"; };
 		822FAA3A1C36339000E48CDF /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +65,10 @@
 		822FAA421C36BCAD00E48CDF /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		822FAA441C36C7E000E48CDF /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		822FAA451C36C7E000E48CDF /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		822FAA481C36D0BE00E48CDF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		822FAA491C36D0BE00E48CDF /* Hotel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		822FAA4A1C36D0BE00E48CDF /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		822FAA4B1C36D0BE00E48CDF /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		AB854E4A72DB90E379CE3205 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEA691718A8F1E7DF929BA8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,20 +147,12 @@
 		822FAA001C36284000E48CDF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				822FAA011C36284000E48CDF /* Goru */,
+				822FAA481C36D0BE00E48CDF /* Event.swift */,
+				822FAA491C36D0BE00E48CDF /* Hotel.swift */,
+				822FAA4A1C36D0BE00E48CDF /* Restaurant.swift */,
+				822FAA4B1C36D0BE00E48CDF /* Tip.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		822FAA011C36284000E48CDF /* Goru */ = {
-			isa = PBXGroup;
-			children = (
-				822FAA041C36284000E48CDF /* Restaurant.swift */,
-				822FAA051C36284000E48CDF /* Event.swift */,
-				822FAA091C36284000E48CDF /* Hotel.swift */,
-				822FAA0A1C36284000E48CDF /* Tip.swift */,
-			);
-			path = Goru;
 			sourceTree = "<group>";
 		};
 		822FAA121C36284000E48CDF /* TableViewCells */ = {
@@ -375,14 +367,14 @@
 			files = (
 				822FAA381C36284000E48CDF /* TipTableViewCell.swift in Sources */,
 				822FAA461C36C7E000E48CDF /* EventTableViewCell.swift in Sources */,
-				822FAA271C36284000E48CDF /* Tip.swift in Sources */,
-				822FAA211C36284000E48CDF /* Restaurant.swift in Sources */,
+				822FAA4D1C36D0BE00E48CDF /* Hotel.swift in Sources */,
 				8204B1571B9AD5B1005B658F /* ViewController.swift in Sources */,
-				822FAA221C36284000E48CDF /* Event.swift in Sources */,
-				822FAA261C36284000E48CDF /* Hotel.swift in Sources */,
 				8204B1551B9AD5B1005B658F /* AppDelegate.swift in Sources */,
 				822FAA401C3644B000E48CDF /* HotelTableViewCell.swift in Sources */,
+				822FAA4C1C36D0BE00E48CDF /* Event.swift in Sources */,
+				822FAA4F1C36D0BE00E48CDF /* Tip.swift in Sources */,
 				822FAA3C1C36339000E48CDF /* RestaurantTableViewCell.swift in Sources */,
+				822FAA4E1C36D0BE00E48CDF /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,33 +19,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
-import LazyTableView
+import Foundation
+import SwiftyJSON
 
-class TipTableViewCell: UITableViewCell {
-    // MARK: - IBOutlets
-    @IBOutlet weak var nameLabel: UILabel!
+class Tip {
+    // Properties
+    var name: String = ""
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        self.selectionStyle = .None
-    }
-}
-
-// MARK: TableViewCell Configurations
-extension TipTableViewCell: LazyTableViewCellProtocol {
-    static func acceptableModelTypes() -> [AnyClass] {
-        return [Tip.self]
-    }
-    
-    static func height(model: AnyObject) -> CGFloat {
-        return 60
-    }
-    
-    func configureCell(model: AnyObject) {
-        if let tip = model as? Tip {
-            self.nameLabel.text = tip.name
-        }
+    init(json: JSON) {
+        self.name = json["name"].stringValue
     }
 }

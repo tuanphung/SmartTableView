@@ -19,33 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
-import LazyTableView
+import Foundation
+import SwiftyJSON
 
-class TipTableViewCell: UITableViewCell {
-    // MARK: - IBOutlets
-    @IBOutlet weak var nameLabel: UILabel!
+class Event {
+    // Properties
+    var name: String = ""
+    var imageName: String = ""
+    var numberOfReviews: Int = 0
+    var rating: Double = 0
+    var startDate: NSDate?
+    var endDate: NSDate?
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    init(json: JSON) {
+        self.name = json["name"].stringValue
+        self.imageName = json["imageName"].stringValue
+        self.rating = json["rating"].doubleValue
         
-        self.selectionStyle = .None
-    }
-}
-
-// MARK: TableViewCell Configurations
-extension TipTableViewCell: LazyTableViewCellProtocol {
-    static func acceptableModelTypes() -> [AnyClass] {
-        return [Tip.self]
-    }
-    
-    static func height(model: AnyObject) -> CGFloat {
-        return 60
-    }
-    
-    func configureCell(model: AnyObject) {
-        if let tip = model as? Tip {
-            self.nameLabel.text = tip.name
-        }
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "yyyyMMdd"
+        
+        self.startDate = dateFormatter.dateFromString(json["startDate"].stringValue)
+        self.endDate = dateFormatter.dateFromString(json["endDate"].stringValue)
     }
 }
