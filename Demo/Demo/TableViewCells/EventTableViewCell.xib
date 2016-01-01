@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SFUIDisplay-Light.otf">
+            <string>SFUIDisplay-Light</string>
+        </mutableArray>
+        <mutableArray key="SFUIText-Regular.otf">
+            <string>SFUIText-Regular</string>
+            <string>SFUIText-Regular</string>
+            <string>SFUIText-Regular</string>
+            <string>SFUIText-Regular</string>
+            <string>SFUIText-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="132" id="KGk-i7-Jjw" userLabel="EventTableViewCell" customClass="EventTableViewCell" customModule="goru" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="280"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="279.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meshup-background-deals" translatesAutoresizingMaskIntoConstraints="NO" id="Tjp-nF-yvf" userLabel="Top Image View">
+                        <rect key="frame" x="0.0" y="0.0" width="371" height="180"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="180" id="jS1-mu-sxx"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIL-J7-Q66" userLabel="Info View">
+                        <rect key="frame" x="0.0" y="180" width="371" height="99.5"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8Q-re-Qr0" userLabel="Rating View" customClass="HCSStarRatingView">
+                                <rect key="frame" x="15" y="35" width="90" height="15"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.99607843137254903" green="0.70980392156862748" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="cBE-fD-sSI"/>
+                                    <constraint firstAttribute="width" constant="90" id="fIK-1X-TLm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Absinthe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYK-Yk-9af" userLabel="Dine Title">
+                                <rect key="frame" x="15" y="10" width="256" height="25"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="3hB-5t-jBo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqp-rR-BHd">
+                                <rect key="frame" x="15" y="55" width="55" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9dC-eY-l1j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 21, 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-td-69C">
+                                <rect key="frame" x="80" y="55" width="73.5" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Teq-by-edn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
+                                <color key="textColor" red="0.098039215690000001" green="0.76862745099999996" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gr-NL-POp">
+                                <rect key="frame" x="15" y="73" width="55" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Prd-jc-nV6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 21, 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5L-Ob-dsD">
+                                <rect key="frame" x="80" y="73" width="73.5" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eCz-Su-51Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
+                                <color key="textColor" red="0.098039215690000001" green="0.76862745099999996" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fb1-td-69C" firstAttribute="leading" secondItem="Kqp-rR-BHd" secondAttribute="trailing" constant="10" id="6L0-Er-o7W"/>
+                            <constraint firstAttribute="trailing" secondItem="iYK-Yk-9af" secondAttribute="trailing" constant="100" id="InU-Kl-33P"/>
+                            <constraint firstItem="iYK-Yk-9af" firstAttribute="leading" secondItem="YIL-J7-Q66" secondAttribute="leading" constant="15" id="Kzf-sB-T2r"/>
+                            <constraint firstItem="iYK-Yk-9af" firstAttribute="top" secondItem="YIL-J7-Q66" secondAttribute="top" constant="10" id="RZl-Fp-zZm"/>
+                            <constraint firstItem="Kqp-rR-BHd" firstAttribute="top" secondItem="y8Q-re-Qr0" secondAttribute="bottom" constant="5" id="U1d-b1-8C7"/>
+                            <constraint firstItem="y8Q-re-Qr0" firstAttribute="leading" secondItem="iYK-Yk-9af" secondAttribute="leading" id="Y8J-80-5IG"/>
+                            <constraint firstItem="Fb1-td-69C" firstAttribute="leading" secondItem="Kqp-rR-BHd" secondAttribute="trailing" constant="-10" id="YTe-9S-hgx"/>
+                            <constraint firstItem="6gr-NL-POp" firstAttribute="top" secondItem="Kqp-rR-BHd" secondAttribute="bottom" constant="-3" id="dBX-nh-SLB"/>
+                            <constraint firstItem="Fb1-td-69C" firstAttribute="centerY" secondItem="Kqp-rR-BHd" secondAttribute="centerY" id="dkh-Ru-jFd"/>
+                            <constraint firstItem="c5L-Ob-dsD" firstAttribute="leading" secondItem="6gr-NL-POp" secondAttribute="trailing" constant="10" id="frW-ef-gbb"/>
+                            <constraint firstItem="y8Q-re-Qr0" firstAttribute="top" secondItem="iYK-Yk-9af" secondAttribute="bottom" id="l51-JS-BN7"/>
+                            <constraint firstItem="c5L-Ob-dsD" firstAttribute="centerY" secondItem="6gr-NL-POp" secondAttribute="centerY" id="osa-EC-AL0"/>
+                            <constraint firstItem="Kqp-rR-BHd" firstAttribute="leading" secondItem="y8Q-re-Qr0" secondAttribute="leading" id="rlE-Pw-cYp"/>
+                            <constraint firstItem="6gr-NL-POp" firstAttribute="leading" secondItem="Kqp-rR-BHd" secondAttribute="leading" id="tXn-C8-3Kc"/>
+                            <constraint firstItem="6gr-NL-POp" firstAttribute="width" secondItem="Kqp-rR-BHd" secondAttribute="width" id="wPF-Tx-DOs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YTe-9S-hgx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-Ro-0t0" userLabel="Dine Tag">
+                        <rect key="frame" x="287" y="140" width="69" height="25"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcU-7R-k0W">
+                                <rect key="frame" x="5" y="1.5" width="59" height="22"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="rRV-GD-Q7O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Event" image="dine-tag-icon">
+                                    <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FcU-7R-k0W" firstAttribute="leading" secondItem="XEU-Ro-0t0" secondAttribute="leading" constant="5" id="5Hd-3K-OZH"/>
+                            <constraint firstItem="FcU-7R-k0W" firstAttribute="centerY" secondItem="XEU-Ro-0t0" secondAttribute="centerY" id="OXq-sk-sNf"/>
+                            <constraint firstAttribute="height" constant="25" id="knr-m2-980"/>
+                            <constraint firstAttribute="trailing" secondItem="FcU-7R-k0W" secondAttribute="trailing" constant="5" id="uTw-kd-CVp"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark-icon-inactive" translatesAutoresizingMaskIntoConstraints="NO" id="YCV-0R-qYH" userLabel="Bookmark Icon">
+                        <rect key="frame" x="338" y="15" width="13" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Y3V-pe-5h9"/>
+                            <constraint firstAttribute="width" constant="13" id="zOa-ll-XFJ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Tjp-nF-yvf" secondAttribute="trailing" id="5Jq-ju-OC4"/>
+                    <constraint firstAttribute="bottom" secondItem="YIL-J7-Q66" secondAttribute="bottom" id="9Vp-kz-ZyO"/>
+                    <constraint firstItem="YCV-0R-qYH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="K9F-4S-lBQ"/>
+                    <constraint firstItem="Tjp-nF-yvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Kd2-bB-Reg"/>
+                    <constraint firstItem="YIL-J7-Q66" firstAttribute="centerX" secondItem="Tjp-nF-yvf" secondAttribute="centerX" id="UZx-9b-Wsb"/>
+                    <constraint firstItem="YIL-J7-Q66" firstAttribute="width" secondItem="Tjp-nF-yvf" secondAttribute="width" id="bXh-qC-LzB"/>
+                    <constraint firstAttribute="trailing" secondItem="YCV-0R-qYH" secondAttribute="trailing" constant="20" id="ddo-oB-zyy"/>
+                    <constraint firstItem="Tjp-nF-yvf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="far-v7-nLq"/>
+                    <constraint firstAttribute="trailing" secondItem="XEU-Ro-0t0" secondAttribute="trailing" constant="15" id="gpx-Mj-o5N"/>
+                    <constraint firstItem="Tjp-nF-yvf" firstAttribute="bottom" secondItem="XEU-Ro-0t0" secondAttribute="bottom" constant="15" id="qQL-3L-22w"/>
+                    <constraint firstItem="YIL-J7-Q66" firstAttribute="top" secondItem="Tjp-nF-yvf" secondAttribute="bottom" id="yHX-Nz-ynb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="endDateLabel" destination="c5L-Ob-dsD" id="ycf-YL-F1p"/>
+                <outlet property="starRatingView" destination="y8Q-re-Qr0" id="mLR-eJ-5Tn"/>
+                <outlet property="startDateLabel" destination="Fb1-td-69C" id="vZF-sh-PTc"/>
+                <outlet property="titleLabel" destination="iYK-Yk-9af" id="Y5u-rj-dz8"/>
+                <outlet property="topImageView" destination="Tjp-nF-yvf" id="H9g-DQ-VfF"/>
+            </connections>
+            <point key="canvasLocation" x="283.5" y="270"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bookmark-icon-inactive" width="13" height="21"/>
+        <image name="dine-tag-icon" width="14" height="14"/>
+        <image name="meshup-background-deals" width="750" height="372"/>
+    </resources>
+</document>

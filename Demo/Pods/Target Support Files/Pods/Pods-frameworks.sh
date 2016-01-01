@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/HCSStarRatingView.framework"
   install_framework "Pods/LazyTableView.framework"
+  install_framework "Pods/LoremIpsum.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/HCSStarRatingView.framework"
   install_framework "Pods/LazyTableView.framework"
+  install_framework "Pods/LoremIpsum.framework"
 fi

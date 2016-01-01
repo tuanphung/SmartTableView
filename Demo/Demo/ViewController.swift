@@ -27,15 +27,41 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.map(model: SimpleCellModel.self, toCell: SimpleTableViewCell.self)
+        self.title = "Lazy"
         
-        tableView.addItems([
-            SimpleCellModel(title: "A"),
-            SimpleCellModel(title: "B"),
-            SimpleCellModel(title: "C"),
-            SimpleCellModel(title: "D")])
+        self.tableView.register([TipTableViewCell.self, RestaurantTableViewCell.self])
+        
+        self.tableView.addItems(self.generateData())
     }
+    
+    func generateData() -> [AnyObject] {
+        var data = [AnyObject]()
+        
+        data.append(self.generateTip())
+        data.append(self.generateRetaurant())
+        data.append(self.generateTip())
+        data.append(self.generateRetaurant())
+        data.append(self.generateTip())
+        data.append(self.generateRetaurant())
+        
+        return data
+    }
+    
+    func generateTip() -> Tip {
+        let tip = Tip()
+        tip.name = "Haha"
+        tip.description = "Hoho"
+        tip.image = UIImage(named: "bg_\(arc4random_uniform(UInt32(7)))")
+        return tip
+    }
+
+    func generateRetaurant() -> Restaurant {
+        let restaurant = Restaurant()
+        restaurant.name = "Haha"
+        restaurant.image = UIImage(named: "bg_\(arc4random_uniform(UInt32(7)))")
+        return restaurant
+    }
+
 }
 

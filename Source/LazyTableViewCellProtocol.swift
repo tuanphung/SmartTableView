@@ -37,7 +37,7 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     // If paircode is setup in model, and it's same to cell's paircode, it's matched. Otherwise, cell will not pick up that model to display.
     static func pairCode() -> Int?
     
-    static func acceptableModelType() -> [AnyClass]
+    static func acceptableModelTypes() -> [AnyClass]
     
     func configureCell(model: AnyObject)
 }

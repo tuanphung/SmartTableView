@@ -10,3 +10,5 @@ inhibit_all_warnings!
 use_frameworks!
 
 pod 'LazyTableView', :path => '../'
+pod 'HCSStarRatingView'
+pod 'LoremIpsum', '~> 1.0.0'

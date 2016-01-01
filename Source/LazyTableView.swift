@@ -91,22 +91,21 @@ public class LazyTableView: UITableView {
         self.addItems(items, section: 0)
     }
     
-    public func register<T: LazyTableViewCellProtocol>(cellType: T.Type) {
+    public func register(cellType: LazyTableViewCellProtocol.Type) {
         guard var _ = self.registeredCellTypes.filter({ $0 == cellType }).first else {
+            self.registeredCellTypes.append(cellType)
+            
+            if let nibName = cellType.nibName() {
+                self.registerNib(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: cellType.reuseIdentifier())
+            }
+            else {
+                self.registerClass(cellType, forCellReuseIdentifier: cellType.reuseIdentifier())
+            }
             return
-        }
-        
-        self.registeredCellTypes.append(cellType)
-        
-        if let nibName = cellType.nibName() {
-            self.registerNib(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: cellType.reuseIdentifier())
-        }
-        else {
-            self.registerClass(cellType, forCellReuseIdentifier: cellType.reuseIdentifier())
         }
     }
     
-    public func register<T: LazyTableViewCellProtocol>(cellTypes: [T.Type]) {
+    public func register(cellTypes: [LazyTableViewCellProtocol.Type]) {
         for cellType in cellTypes {
             self.register(cellType)
         }
