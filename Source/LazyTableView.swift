@@ -26,6 +26,7 @@ public class LazyTableView: UITableView {
     
     var onDidSelectItem: ((item: AnyObject) -> ())?
     
+    //
     var shouldLoadMore: Bool = false
     var onLoadMore: (() -> ())?
     func loadMoreDidCompleteWithItems(items: [AnyObject]) {
@@ -36,7 +37,7 @@ public class LazyTableView: UITableView {
     private var source = [LazyTableViewSection]()
     private var registeredCellTypes = [LazyTableViewCellProtocol.Type]()
     
-    // Private Methods
+    // Find registed cell type that accept model.
     private func cellTypeForModel(model: AnyObject) -> LazyTableViewCellProtocol.Type? {
         for cellType in self.registeredCellTypes {
             if let _ = (cellType.acceptableModelTypes().filter { model.isKindOfClass($0) }.first) {
@@ -91,6 +92,7 @@ public class LazyTableView: UITableView {
         self.addItems(items, section: 0)
     }
     
+    // Store cell type to query later
     public func register(cellType: LazyTableViewCellProtocol.Type) {
         guard var _ = self.registeredCellTypes.filter({ $0 == cellType }).first else {
             self.registeredCellTypes.append(cellType)

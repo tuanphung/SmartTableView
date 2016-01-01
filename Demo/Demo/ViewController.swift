@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         self.tableView.addItems(self.generateModels())
     }
     
+    // Load sample data from local json file.
     func generateModels() -> [AnyObject] {
         var models = [AnyObject]()
         
