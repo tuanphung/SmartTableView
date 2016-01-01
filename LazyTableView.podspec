@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "LazyTableView"
   s.version      = "1.0"
-  s.summary      = "Simply the way to display multiple cell types on TableView."
+  s.summary      = "New way to render model on UITableViewCell. Allow displaying multiple models and cells automatically."
 
   s.description  = <<-DESC
-                   Remove the old way to display cell on TableView. Now you can link Cell class with Model class with `bind` method.
-                   Just need to push models and see them displaying on TableView.
+                   Forget the old way to display cell on TableView.
+                   Just need few code lines to setup, the rest will be automatically.
                    DESC
 
   s.homepage     = "https://github.com/tuanphung/LazyTableView"
