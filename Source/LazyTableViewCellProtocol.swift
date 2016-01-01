@@ -55,7 +55,7 @@ public extension LazyTableViewCellProtocol {
     
     static func pairCode() -> Int? { return nil }
     
-    static func acceptableModelTypes() -> [AnyClass] { return [] }
+    static func acceptableModelTypes() -> [AnyClass] { return [AnyClass]() }
     
     static func height(model: AnyObject) -> CGFloat { return UITableViewAutomaticDimension }
 }

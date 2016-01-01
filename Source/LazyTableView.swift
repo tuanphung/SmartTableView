@@ -106,6 +106,12 @@ public class LazyTableView: UITableView {
         }
     }
     
+    public func register<T: LazyTableViewCellProtocol>(cellTypes: [T.Type]) {
+        for cellType in cellTypes {
+            self.register(cellType)
+        }
+    }
+    
     public func clearAll() {
         for section in self.source {
             section.clear()
