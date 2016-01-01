@@ -1,0 +1,14 @@
+PODS:
+  - LazyTableView (1.0)
+
+DEPENDENCIES:
+  - LazyTableView (from `../`)
+
+EXTERNAL SOURCES:
+  LazyTableView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LazyTableView: d344dd3f061e22d501a714be0a581ba36da3413d
+
+COCOAPODS: 0.39.0

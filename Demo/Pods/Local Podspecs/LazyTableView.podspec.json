@@ -1,0 +1,21 @@
+{
+  "name": "LazyTableView",
+  "version": "1.0",
+  "summary": "Simply the way to display multiple cell types on TableView.",
+  "description": "Remove the old way to display cell on TableView. Now you can link Cell class with Model class with `bind` method.\nJust need to push models and see them displaying on TableView.",
+  "homepage": "https://github.com/tuanphung/LazyTableView",
+  "license": "MIT",
+  "authors": {
+    "Tuan Phung": "tuanphunglk@gmail.com"
+  },
+  "social_media_url": "https://twitter.com/tuanphunglk",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/tuanphung/LazyTableView.git",
+    "tag": "1.0"
+  },
+  "source_files": "Source/*.swift",
+  "requires_arc": true
+}

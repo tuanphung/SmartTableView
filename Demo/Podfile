@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+# wrap all Pods into framework, then you can import directly in Swift file, no need to use Bridging-Header.
+# This was added from CocoaPods 0.36, to support libraries is written by Swift.
+use_frameworks!
+
+pod 'LazyTableView', :path => '../'
