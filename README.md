@@ -1,31 +1,36 @@
 #LazyTableView
-How many times do you have to implement UITableViewDatasource and UITableViewDelegate? Is it boring?
-And how to deal with multiple cell types in one TableView?
+How many times do you have to implement UITableViewDatasource and UITableViewDelegate?
+
+Is it boring? And how to deal with multiple cell types in one TableView?
 
 You're smart so you need to find a smart way to do it.
+
 LazyTableView is for you, it simply the way to render model on UITableViewCell. Already support displaying multiple models and cells automatically.
 
 ## Why LazyTableView?
 ### Traditional way
-{ Image }
+![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Assets/OldWay.png)
+
 Your ViewController have to:
 - Implement a lot of methods to adapt UITableViewDatasource and UITableViewDelegate.
 - Do some suck things like `if else` condition if you need to display multiple kind of cell with multiple models.
 - Maintain models.
 - Hard to reuse UITableView.
 
-### LazyTableView way
-{ Image }
+### Lazy way
+![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Assets/LazyWay.png)
+
 So now:
-- Don't need to implement any methods of UITableViewDatasource and UITableViewDelegate. Everything should be done in UITableViewCell.
+- Don't need to implement any methods of UITableViewDatasource and UITableViewDelegate. Most should be done in UITableViewCell.
 - It's super easy to reuse UITableViewCell.
 - Models are managed by LazyTableView, not ViewController anymore.
 - Allow displaying different kinds of model without pain, just push models to LazyTableView, then cell will automatically pick up models then display them.
 
 ## Usage
 ### Setup Your Model
-Nothing special, just reuse your model you made.
-For example, I setup Restaurant & Hotel model like this:
+Nothing special, just reuse your model you made before.
+
+For example, I create Restaurant & Hotel model like this:
 ```swift
 class Restaurant {
     // Properties
@@ -75,8 +80,9 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
 ```
 
 ### Setup your TableViewCell
-UITableViewCell must implement LazyTableViewCellProcotol, because LazyTableView require some methods, it only accept LazyTableViewCellProcotol.
-However, you don't need implement all, because some methods already have default implementation.
+LazyTableView only accept LazyTableViewCellProcotol because it require some methods. So your UITableViewCell must implement LazyTableViewCellProcotol.
+
+However, you don't need implement all, some methods already have default implementation.
 ```swift
 class RestaurantTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
@@ -138,7 +144,7 @@ extension HotelTableViewCell: LazyTableViewCellProtocol {
     }
 }
 ```
-So, your cells are ready to use.
+Finally! Your cells are ready to use.
 
 ### Displaying Models
 In your ViewController, not too much works to do.
@@ -159,9 +165,9 @@ let hotel = Hotel()
 self.lazyTableView.addItems([restaurant, hotel])
 ```
 
-Enjoys!
+Enjoys it!
 
-![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Demo.gif)
+![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Assets/Demo.gif)
 
 ## Requirements
 - iOS 8.0+ / Mac OS X 10.9+
