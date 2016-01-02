@@ -142,11 +142,11 @@ Finally! Your cells are ready to use.
 ### Displaying Models
 In your ViewController, not too much works to do.
 
-1. Register your cells:
+1.Register your cells:
 ```swift
 self.lazyTableView.register([RestaurantTableViewCell.self, HotelTableViewCell.self])
 ```
-2. Push your models:
+2.Push your models:
 ```swift
 let restaurant = Restaurant()
 ... // Some extra initializion
@@ -157,7 +157,7 @@ let hotel = Hotel()
 self.lazyTableView.addItems([restaurant, hotel])
 ```
 
-3. Enjoys it!
+3.Enjoys it!
 
 ![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Assets/Demo.gif)
 
