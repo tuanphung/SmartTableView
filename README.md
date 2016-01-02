@@ -3,16 +3,16 @@ A lazy way for smart developers to deal with UITableView.
 
 ## Why LazyTableView?
 How many times do you have to implement UITableViewDatasource and UITableViewDelegate?<br />
-Is it boring? And how to deal with multiple cell types in one TableView?
+Is it boring? And how to deal with different UITableViewCells in one TableView?
 
 You're smart, so you need a smart way to do it.<br />
-LazyTableView is for you, it's easy to display model in UITableView. Also support different cell types automatically.
+LazyTableView is for you, it's easy to display model in UITableView. Also support different UITableViewCells.
 ### Traditional way
 ![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Assets/OldWay.png)
 
 Your ViewController have to:
 - Implement a lot of methods to adapt UITableViewDatasource and UITableViewDelegate.
-- Do some suck things like `if else` condition if you need to display different cell types in one TableView.
+- Do some suck things like `if else` condition if you need to display different UITableViewCells in one TableView.
 - Maintain models.
 - Hard to reuse UITableView.
 
@@ -23,7 +23,7 @@ So now:
 - Don't need to implement any methods of UITableViewDatasource and UITableViewDelegate. Most should be done in UITableViewCell.
 - It's super easy to reuse UITableViewCell.
 - Models are managed by LazyTableView, not ViewController anymore.
-- Allow displaying different cell types without pain. After some setups, just push models to LazyTableView, then cell will automatically pick up models then display them.
+- Allow displaying UITableViewCells base on model type without pain. After some setups, just push models to LazyTableView, then cell will automatically pick up models and display them.
 
 ## Usage
 ### Setup Your Model
@@ -170,7 +170,7 @@ self.lazyTableView.onDidSelectItem = { [weak self] item in
 }
 ```
 
-### LoadMore support
+### Lazy loading models from Network
 Coming soon...
 
 ## Requirements
