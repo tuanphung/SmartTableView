@@ -37,8 +37,12 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     // If paircode is setup in model, and it's same to cell's paircode, it's matched. Otherwise, cell will not pick up that model to display.
     static func pairCode() -> Int?
     
+    // Define what class of model that Cell can display. It will ignore all models that type is not in list.
+    // This method is required overriding.
     static func acceptableModelTypes() -> [AnyClass]
     
+    // Define how to map properties of model to UI.
+    // This method is required overriding.
     func configureCell(model: AnyObject)
 }
 
@@ -54,8 +58,6 @@ public extension LazyTableViewCellProtocol {
     }
     
     static func pairCode() -> Int? { return nil }
-    
-    static func acceptableModelTypes() -> [AnyClass] { return [AnyClass]() }
     
     static func height(model: AnyObject) -> CGFloat { return UITableViewAutomaticDimension }
 }

@@ -26,7 +26,8 @@ public class LazyTableView: UITableView {
     
     var onDidSelectItem: ((item: AnyObject) -> ())?
     
-    //
+    // Abstract the way to implement LoadMore feature.
+    // Under implementation.
     var shouldLoadMore: Bool = false
     var onLoadMore: (() -> ())?
     func loadMoreDidCompleteWithItems(items: [AnyObject]) {
@@ -34,7 +35,10 @@ public class LazyTableView: UITableView {
         self.addItems(items)
     }
     
+    // Keep referrence to models, encapsulated into LazyTableViewSection
     private var source = [LazyTableViewSection]()
+    
+    // Keep all registered UITableViewCell that implement LazyTableViewCellProtocol.
     private var registeredCellTypes = [LazyTableViewCellProtocol.Type]()
     
     // Find registed cell type that accept model.
