@@ -26,8 +26,9 @@ So now:
 
 ## Usage
 ### Setup Your Model
-Nothing special, just reuse your model you made before.<br />
-For example, I create Restaurant & Hotel model like this:
+Nothing special, just reuse models you made before.
+
+For example, I create two models below:
 ```swift
 class Restaurant {
     // Properties
@@ -141,7 +142,6 @@ Finally! Your cells are ready to use.
 ### Displaying Models
 In your ViewController, not too much works to do.
 
-Just 2 steps:<br />
 1. Register your cells:
 ```swift
 self.lazyTableView.register([RestaurantTableViewCell.self, HotelTableViewCell.self])
@@ -157,7 +157,7 @@ let hotel = Hotel()
 self.lazyTableView.addItems([restaurant, hotel])
 ```
 
-Enjoys it!
+3. Enjoys it!
 
 ![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Assets/Demo.gif)
 
