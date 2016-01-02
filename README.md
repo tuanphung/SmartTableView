@@ -3,7 +3,7 @@ How many times do you have to implement UITableViewDatasource and UITableViewDel
 Is it boring? And how to deal with multiple cell types in one TableView?
 
 You're smart so you need to find a smart way to do it.<br />
-LazyTableView is for you, it simply the way to render model on UITableViewCell. Already support displayingdifferent cell types automatically.
+LazyTableView is for you, it simply the way to render model on UITableViewCell. Already support displaying different cell types automatically.
 
 ## Why LazyTableView?
 ### Traditional way
@@ -22,7 +22,7 @@ So now:
 - Don't need to implement any methods of UITableViewDatasource and UITableViewDelegate. Most should be done in UITableViewCell.
 - It's super easy to reuse UITableViewCell.
 - Models are managed by LazyTableView, not ViewController anymore.
-- Allow displaying different cell types without pain (after some setups), just push models to LazyTableView, then cell will automatically pick up models then display them.
+- Allow displaying different cell types without pain. After some setups, just push models to LazyTableView, then cell will automatically pick up models then display them.
 
 ## Usage
 ### Setup Your Model
