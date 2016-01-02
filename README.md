@@ -1,11 +1,9 @@
 #LazyTableView
-How many times do you have to implement UITableViewDatasource and UITableViewDelegate?
-
+How many times do you have to implement UITableViewDatasource and UITableViewDelegate?<br />
 Is it boring? And how to deal with multiple cell types in one TableView?
 
-You're smart so you need to find a smart way to do it.
-
-LazyTableView is for you, it simply the way to render model on UITableViewCell. Already support displaying multiple models and cells automatically.
+You're smart so you need to find a smart way to do it.<br />
+LazyTableView is for you, it simply the way to render model on UITableViewCell. Already support displayingdifferent cell types automatically.
 
 ## Why LazyTableView?
 ### Traditional way
@@ -13,7 +11,7 @@ LazyTableView is for you, it simply the way to render model on UITableViewCell. 
 
 Your ViewController have to:
 - Implement a lot of methods to adapt UITableViewDatasource and UITableViewDelegate.
-- Do some suck things like `if else` condition if you need to display multiple kind of cell with multiple models.
+- Do some suck things like `if else` condition if you need to display different cell types in one TableView.
 - Maintain models.
 - Hard to reuse UITableView.
 
@@ -24,12 +22,11 @@ So now:
 - Don't need to implement any methods of UITableViewDatasource and UITableViewDelegate. Most should be done in UITableViewCell.
 - It's super easy to reuse UITableViewCell.
 - Models are managed by LazyTableView, not ViewController anymore.
-- Allow displaying different kinds of model without pain, just push models to LazyTableView, then cell will automatically pick up models then display them.
+- Allow displaying different cell types without pain (after some setups), just push models to LazyTableView, then cell will automatically pick up models then display them.
 
 ## Usage
 ### Setup Your Model
-Nothing special, just reuse your model you made before.
-
+Nothing special, just reuse your model you made before.<br />
 For example, I create Restaurant & Hotel model like this:
 ```swift
 class Restaurant {
@@ -62,13 +59,6 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     
     static func height(model: AnyObject) -> CGFloat
     
-    // Draft behaviour
-    // In case a model is displayed by multiple Cells, use pairCode to match model and cell.
-    // Paircode only is checked if model have a paircode setup.
-    // If paircode is not setup in model, just need to check mapping class type.
-    // If paircode is setup in model, and it's same to cell's paircode, it's matched. Otherwise, cell will not pick up that model to display.
-    static func pairCode() -> Int?
-    
     // Define what class of model that Cell can display. It will ignore all models that type is not in list.
     // This method is required overriding.
     static func acceptableModelTypes() -> [AnyClass]
@@ -80,9 +70,11 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
 ```
 
 ### Setup your TableViewCell
-LazyTableView only accept LazyTableViewCellProcotol because it require some methods. So your UITableViewCell must implement LazyTableViewCellProcotol.
-
+LazyTableView only accept LazyTableViewCellProcotol because it require some methods. So your UITableViewCell must implement LazyTableViewCellProcotol.<br />
 However, you don't need implement all, some methods already have default implementation.
+
+`By default, your cell Identifier is same to class name. If you use XIB to layout cell, you have to set Identifier is same to class name`
+
 ```swift
 class RestaurantTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
@@ -148,8 +140,8 @@ Finally! Your cells are ready to use.
 
 ### Displaying Models
 In your ViewController, not too much works to do.
-Just 2 steps:
 
+Just 2 steps:<br />
 1. Register your cells:
 ```swift
 self.lazyTableView.register([RestaurantTableViewCell.self, HotelTableViewCell.self])
@@ -157,10 +149,10 @@ self.lazyTableView.register([RestaurantTableViewCell.self, HotelTableViewCell.se
 2. Push your models:
 ```swift
 let restaurant = Restaurant()
-... // Some init here
+... // Some extra initializion
 
 let hotel = Hotel()
-... // Some init here
+... // Some extra initializion
 
 self.lazyTableView.addItems([restaurant, hotel])
 ```
@@ -168,6 +160,14 @@ self.lazyTableView.addItems([restaurant, hotel])
 Enjoys it!
 
 ![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Assets/Demo.gif)
+
+### Handle click event on Cell
+```swift
+self.lazyTableView.onDidSelectItem = { [weak self] item in
+    // Handle selected item here
+    ...
+}
+```
 
 ## Requirements
 - iOS 8.0+ / Mac OS X 10.9+
