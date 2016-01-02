@@ -1,11 +1,12 @@
 #LazyTableView
+A lazy way for smart developers to deal with UITableView.
+
+## Why LazyTableView?
 How many times do you have to implement UITableViewDatasource and UITableViewDelegate?<br />
 Is it boring? And how to deal with multiple cell types in one TableView?
 
 You're smart so you need to find a smart way to do it.<br />
 LazyTableView is for you, it simply the way to render model on UITableViewCell. Already support displaying different cell types automatically.
-
-## Why LazyTableView?
 ### Traditional way
 ![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Assets/OldWay.png)
 
