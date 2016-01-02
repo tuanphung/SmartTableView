@@ -1,11 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = "LazyTableView"
   s.version      = "1.0"
-  s.summary      = "New way to render model on UITableViewCell. Allow displaying multiple models and cells automatically."
+  s.summary      = "A lazy way for smart developers to deal with UITableView."
 
   s.description  = <<-DESC
-                   Forget the old way to display cell on TableView.
-                   Just need few code lines to setup, the rest will be automatically.
+                  How many times do you have to implement UITableViewDatasource and UITableViewDelegate?
+                  Is it boring? And how to deal with different UITableViewCells in one TableView?
+
+                  You're smart so you need to find a smart way to do it.
+                  LazyTableView is for you, it's easy to display model in UITableView. Also support different UITableViewCells.
                    DESC
 
   s.homepage     = "https://github.com/tuanphung/LazyTableView"
