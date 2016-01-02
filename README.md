@@ -1,15 +1,15 @@
 #LazyTableView
 New way to render model on UITableViewCell. Allow displaying multiple models and cells automatically.
 
-## Why LazyTableView
-# Traditional way
+## Why LazyTableView?
+### Traditional way
 { Image }
 - Your ViewController have to implement a lot of methods to adapt UITableViewDatasource and UITableViewDelegate.
 - You have to do something like `if else` condition if you need to display multiple kind of cell with multiple models.
 - You have to maintain array of models in ViewController.
 - Hard to reuse UITableView.
 
-# LazyTableView way
+### LazyTableView way
 { Image }
 - ViewController don't need to implement any methods of UITableViewDatasource and UITableViewDelegate.
 - Everything should be done in UITableViewCell, so it's super easy for resuable.
@@ -17,7 +17,7 @@ New way to render model on UITableViewCell. Allow displaying multiple models and
 - Allow displaying different kinds of model without pain, just push models to LazyTableView, then cell will automatically pick up models then display them.
 
 ## Usage
-# Setup Your Model
+### Setup Your Model
 Nothing special, just reuse your model you made.
 For example, I setup Restaurant & Hotel model like this:
 ```swift
@@ -25,17 +25,8 @@ class Restaurant {
     // Properties
     var name: String = ""
     var imageName: String = ""
-    var price: Double = 0
     var numberOfReviews: Int = 0
     var rating: Double = 0
-    
-    init(json: JSON) {
-        self.name = json["name"].stringValue
-        self.imageName = json["imageName"].stringValue
-        self.price = json["price"].doubleValue
-        self.numberOfReviews = json["numberOfReviews"].intValue
-        self.rating = json["rating"].doubleValue
-    }
 }
 ```
 
@@ -47,37 +38,39 @@ class Hotel {
     var price: Double = 0
     var userRating: Double = 0
     var rating: Double = 0
-    
-    init(json: JSON) {
-        self.name = json["name"].stringValue
-        self.imageName = json["imageName"].stringValue
-        self.price = json["price"].doubleValue
-        self.userRating = json["userRating"].doubleValue
-        self.rating = json["rating"].doubleValue
-    }
 }
 ```
-# Introduce LazyTableViewCellProtocol
+### Introduce LazyTableViewCellProtocol
 ```swift
+public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     static func reuseIdentifier() -> String
-  
+    
     static func nibName() -> String?
     
     static func nib() -> UINib?
     
     static func height(model: AnyObject) -> CGFloat
     
+    // Draft behaviour
+    // In case a model is displayed by multiple Cells, use pairCode to match model and cell.
+    // Paircode only is checked if model have a paircode setup.
+    // If paircode is not setup in model, just need to check mapping class type.
+    // If paircode is setup in model, and it's same to cell's paircode, it's matched. Otherwise, cell will not pick up that model to display.
+    static func pairCode() -> Int?
+    
+    // Define what class of model that Cell can display. It will ignore all models that type is not in list.
+    // This method is required overriding.
     static func acceptableModelTypes() -> [AnyClass]
     
     // Define how to map properties of model to UI.
     // This method is required overriding.
     func configureCell(model: AnyObject)
+}
 ```
 
-# Setup your TableViewCell
+### Setup your TableViewCell
 UITableViewCell have to implement LazyTableViewCellProcotol, LazyTableView require some methods. You don't need implement all, because some methods already have default implementation.
 ```swift
-// MARK: TableViewCell Configurations
 extension RestaurantTableViewCell: LazyTableViewCellProtocol {
     static func acceptableModelTypes() -> [AnyClass] {
         return [Restaurant.self]
@@ -92,15 +85,14 @@ extension RestaurantTableViewCell: LazyTableViewCellProtocol {
             self.titleLabel.text = restaurant.name
             self.reviewLabel.text = "\(restaurant.numberOfReviews) review" + (restaurant.numberOfReviews > 1 ? "s" : "")
             self.topImageView.image = UIImage(named: restaurant.imageName)
+    
             self.starRatingView.value = CGFloat(restaurant.rating)
-            self.priceLabel.text = "\(restaurant.price) $"
         }
     }
 }
 ```
 
 ```swift
-// MARK: TableViewCell Configurations
 extension HotelTableViewCell: LazyTableViewCellProtocol {
     static func acceptableModelTypes() -> [AnyClass] {
         return [Hotel.self]
@@ -114,10 +106,8 @@ extension HotelTableViewCell: LazyTableViewCellProtocol {
         if let hotel = model as? Hotel {
             self.titleLabel.text = hotel.name
             self.topImageView.image = UIImage(named: hotel.imageName)
-            
             self.starRatingView.value = CGFloat(hotel.rating)
             self.ratingPointLabel.text = "\(hotel.userRating)"
-            
             self.priceLabel.text = "\(hotel.price) $"
         }
     }
@@ -125,7 +115,7 @@ extension HotelTableViewCell: LazyTableViewCellProtocol {
 ```
 So, your cells are ready to use.
 
-# Displaying Models
+### Displaying Models
 In your ViewController, not too much works to do, you just need to do 2 steps:
 1. Register your cells:
 ```swift
@@ -141,6 +131,10 @@ let hotel = Hotel()
 
 self.lazyTableView.addItems([restaurant, hotel])
 ```
+
+Cheers!
+
+![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Demo.gif)
 
 ## Requirements
 - iOS 8.0+ / Mac OS X 10.9+
