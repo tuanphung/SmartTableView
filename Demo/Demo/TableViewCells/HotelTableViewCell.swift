@@ -53,10 +53,8 @@ extension HotelTableViewCell: LazyTableViewCellProtocol {
         if let hotel = model as? Hotel {
             self.titleLabel.text = hotel.name
             self.topImageView.image = UIImage(named: hotel.imageName)
-            
             self.starRatingView.value = CGFloat(hotel.rating)
             self.ratingPointLabel.text = "\(hotel.userRating)"
-            
             self.priceLabel.text = "\(hotel.price) $"
         }
     }
