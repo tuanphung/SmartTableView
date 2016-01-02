@@ -169,6 +169,9 @@ self.lazyTableView.onDidSelectItem = { [weak self] item in
 }
 ```
 
+### LoadMore support
+Coming soon...
+
 ## Requirements
 - iOS 8.0+ / Mac OS X 10.9+
 - Xcode 6.4
