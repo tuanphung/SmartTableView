@@ -63,39 +63,17 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAm-fP-WJS" userLabel="Price Label">
-                                <rect key="frame" x="284.5" y="35" width="71" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="5PI-ca-NQx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.086274509799999996" green="0.68627450980000004" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5PI-ca-NQx"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sAm-fP-WJS" secondAttribute="trailing" constant="20" id="2VL-qg-yQ6"/>
                             <constraint firstAttribute="trailing" secondItem="iYK-Yk-9af" secondAttribute="trailing" constant="120" id="InU-Kl-33P"/>
                             <constraint firstItem="iYK-Yk-9af" firstAttribute="leading" secondItem="YIL-J7-Q66" secondAttribute="leading" constant="15" id="Kzf-sB-T2r"/>
                             <constraint firstItem="iYK-Yk-9af" firstAttribute="top" secondItem="YIL-J7-Q66" secondAttribute="top" constant="10" id="RZl-Fp-zZm"/>
-                            <constraint firstAttribute="trailing" secondItem="sAm-fP-WJS" secondAttribute="trailing" constant="15" id="TUP-LN-p6T"/>
                             <constraint firstItem="y8Q-re-Qr0" firstAttribute="leading" secondItem="iYK-Yk-9af" secondAttribute="leading" id="Y8J-80-5IG"/>
                             <constraint firstItem="73I-yF-bTz" firstAttribute="centerY" secondItem="y8Q-re-Qr0" secondAttribute="centerY" id="dmI-G5-UXz"/>
                             <constraint firstItem="y8Q-re-Qr0" firstAttribute="top" secondItem="iYK-Yk-9af" secondAttribute="bottom" constant="5" id="l51-JS-BN7"/>
                             <constraint firstItem="73I-yF-bTz" firstAttribute="leading" secondItem="y8Q-re-Qr0" secondAttribute="trailing" constant="15" id="u20-rD-0us"/>
-                            <constraint firstItem="sAm-fP-WJS" firstAttribute="centerY" secondItem="73I-yF-bTz" secondAttribute="centerY" id="v8q-tO-2cL"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="2VL-qg-yQ6"/>
-                            </mask>
-                        </variation>
                     </view>
                     <view clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-Ro-0t0" userLabel="Tag">
                         <rect key="frame" x="256" y="115" width="100" height="30"/>
@@ -149,7 +127,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="priceLabel" destination="sAm-fP-WJS" id="WQE-Kx-0AG"/>
                 <outlet property="reviewLabel" destination="73I-yF-bTz" id="MY7-hv-ehJ"/>
                 <outlet property="starRatingView" destination="y8Q-re-Qr0" id="mLR-eJ-5Tn"/>
                 <outlet property="titleLabel" destination="iYK-Yk-9af" id="Y5u-rj-dz8"/>

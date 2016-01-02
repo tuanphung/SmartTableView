@@ -29,7 +29,6 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var starRatingView: HCSStarRatingView!
-    @IBOutlet weak var priceLabel: UILabel!
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -55,8 +54,6 @@ extension RestaurantTableViewCell: LazyTableViewCellProtocol {
             self.topImageView.image = UIImage(named: restaurant.imageName)
     
             self.starRatingView.value = CGFloat(restaurant.rating)
-            
-            self.priceLabel.text = "\(restaurant.price) $"
         }
     }
 }
