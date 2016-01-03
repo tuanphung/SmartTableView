@@ -28,8 +28,8 @@ class Hotel {
 ### Setup your UITableViewCell
 `By default, your cell Identifier is same to ClassName. If you use XIB to layout cell, you have to set Identifier is your ClassName.`
 
-LazyTableViewCellProtocol already support Generic and Associated types. So, no type casts required.
-Your cell only accept model type that same in `height:` & `configureCell:` method.
+LazyTableViewCellProtocol already support Generic and Associated types. So, no type casts required.<br />
+Your cell only accept model that same in `height:` & `configureCell:` method.
 
 ```swift
 class RestaurantTableViewCell: UITableViewCell {
@@ -54,6 +54,7 @@ extension RestaurantTableViewCell: LazyTableViewCellProtocol {
 }
 ```
 `RestaurantTableViewCell` will only accept `Restaurant` model. Others will be ignored.
+<br />
 
 ```swift
 class HotelTableViewCell: UITableViewCell {
@@ -81,7 +82,7 @@ extension HotelTableViewCell: LazyTableViewCellProtocol {
 }
 ```
 `HotelTableViewCell` will only accept `Hotel` model. Others will be ignored.
-
+<br />
 Finally! Your cells are ready to use.
 
 ### Displaying Models
