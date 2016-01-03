@@ -84,11 +84,10 @@ extension HotelTableViewCell: LazyTableViewCellProtocol {
 ```
 `HotelTableViewCell` will only accept `Hotel` model. Others will be ignored.
 
-
-Finally! Your cells are ready to use.
-
 ## Displaying Models
-In your ViewController, not too much works to do.
+Finally! Your cells are ready to use. Now, let's display models on cells, actually it's really easy.<br />
+
+In your ViewController:
 
 1.Register your cells:
 ```swift
