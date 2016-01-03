@@ -28,6 +28,9 @@ class Hotel {
 ### Setup your UITableViewCell
 `By default, your cell Identifier is same to ClassName. If you use XIB to layout cell, you have to set Identifier is your ClassName.`
 
+LazyTableViewCellProtocol already support Generic and Associated types. So, no type casts required.
+Your cell only accept model type that same in `height:` & `configureCell:` method.
+
 ```swift
 class RestaurantTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
@@ -38,24 +41,19 @@ class RestaurantTableViewCell: UITableViewCell {
 }
 
 extension RestaurantTableViewCell: LazyTableViewCellProtocol {
-    static func acceptableModelTypes() -> [AnyClass] {
-        return [Restaurant.self]
-    }
-    
-    static func height(model: AnyObject) -> CGFloat {
+    static func height(restaurant: Restaurant) -> CGFloat {
         return 230
     }
     
-    func configureCell(model: AnyObject) {
-        if let restaurant = model as? Restaurant {
-            self.titleLabel.text = restaurant.name
-            self.reviewLabel.text = "\(restaurant.numberOfReviews) review" + (restaurant.numberOfReviews > 1 ? "s" : "")
-            self.topImageView.image = UIImage(named: restaurant.imageName)
-            self.starRatingView.value = CGFloat(restaurant.rating)
-        }
+    func configureCell(restaurant: Restaurant) {
+        self.titleLabel.text = restaurant.name
+        self.reviewLabel.text = "\(restaurant.numberOfReviews) review" + (restaurant.numberOfReviews > 1 ? "s" : "")
+        self.topImageView.image = UIImage(named: restaurant.imageName)
+        self.starRatingView.value = CGFloat(restaurant.rating)
     }
 }
 ```
+`RestaurantTableViewCell` will only accept `Restaurant` model. Others will be ignored.
 
 ```swift
 class HotelTableViewCell: UITableViewCell {
@@ -69,25 +67,21 @@ class HotelTableViewCell: UITableViewCell {
 }
 
 extension HotelTableViewCell: LazyTableViewCellProtocol {
-    static func acceptableModelTypes() -> [AnyClass] {
-        return [Hotel.self]
-    }
-    
-    static func height(model: AnyObject) -> CGFloat {
+    static func height(hotel: Hotel) -> CGFloat {
         return 250
     }
     
-    func configureCell(model: AnyObject) {
-        if let hotel = model as? Hotel {
-            self.titleLabel.text = hotel.name
-            self.topImageView.image = UIImage(named: hotel.imageName)
-            self.starRatingView.value = CGFloat(hotel.rating)
-            self.ratingPointLabel.text = "\(hotel.userRating)"
-            self.priceLabel.text = "\(hotel.price) $"
-        }
+    func configureCell(hotel: Hotel) {
+        self.titleLabel.text = hotel.name
+        self.topImageView.image = UIImage(named: hotel.imageName)
+        self.starRatingView.value = CGFloat(hotel.rating)
+        self.ratingPointLabel.text = "\(hotel.userRating)"
+        self.priceLabel.text = "\(hotel.price) $"
     }
 }
 ```
+`HotelTableViewCell` will only accept `Hotel` model. Others will be ignored.
+
 Finally! Your cells are ready to use.
 
 ### Displaying Models
@@ -95,7 +89,8 @@ In your ViewController, not too much works to do.
 
 1.Register your cells:
 ```swift
-self.lazyTableView.register([RestaurantTableViewCell.self, HotelTableViewCell.self])
+self.lazyTableView.register(RestaurantTableViewCell.self)
+self.lazyTableView.register(HotelTableViewCell.self)
 ```
 2.Push your models:
 ```swift
