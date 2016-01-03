@@ -48,11 +48,9 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     func configureCell(model: ModelType)
 }
 ```
-Since LazyTableView require some implementations in your cell, so it only accept cells that implemented this protocol.<br />
-`Don't need implement all, some methods already have default implementation.`
-* Important:
-Since LazyTableViewCellProtocol used Associated type. So, no type casts required.
-ModelType is based on your cell implementation (in `height:` & `configureCell:` method).
+LazyTableView require some implementations in your cell, so your cell must implement this protocol.<br />
+* Don't need implement all, some methods already have default implementation.
+* Since LazyTableViewCellProtocol used Associated type. No type casts required, so `ModelType` is based on your cell implementation (in `height:` & `configureCell:` method).
 
 Sample Project
 --------------
