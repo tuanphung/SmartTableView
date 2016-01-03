@@ -8,7 +8,7 @@ Is it boring? And how to deal with different UITableViewCells in one TableView?
 You're smart, so you need a smart way to do it.<br />
 LazyTableView is for you, it's easy to display model in UITableView. Also support different UITableViewCells.
 ### Traditional way
-![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Assets/OldWay.png)
+![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/OldWay.png)
 
 Your ViewController have to:
 - Implement a lot of methods to adapt UITableViewDatasource and UITableViewDelegate.
@@ -17,7 +17,7 @@ Your ViewController have to:
 - Hard to reuse UITableView.
 
 ### Lazy way
-![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Assets/LazyWay.png)
+![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/LazyWay.png)
 
 So now:
 - Don't need to implement any methods of UITableViewDatasource and UITableViewDelegate. Most should be done in UITableViewCell.
@@ -160,7 +160,7 @@ self.lazyTableView.addItems([restaurant, hotel])
 
 3.Enjoys it!
 
-![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Assets/Demo.gif)
+![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/Demo.gif)
 
 ### Handle click event on Cell
 ```swift
