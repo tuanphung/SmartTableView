@@ -26,10 +26,7 @@ class Hotel {
 ```
 
 ### Setup your UITableViewCell
-LazyTableView require some implementations in your cell, so your UITableViewCell must implement LazyTableViewCellProcotol.<br />
-However, you don't need implement all, some methods already have default implementation.
-
-`By default, your cell Identifier is same to class name. If you use XIB to layout cell, you have to set Identifier is your class name.`
+`By default, your cell Identifier is same to ClassName. If you use XIB to layout cell, you have to set Identifier is your ClassName.`
 
 ```swift
 class RestaurantTableViewCell: UITableViewCell {
