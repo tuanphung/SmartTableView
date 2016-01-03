@@ -49,7 +49,8 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     func configureCell(model: AnyObject)
 }
 ```
-Since LazyTableView require some implementations in your cell, so it only accept cells that implemented this protocol.
+Since LazyTableView require some implementations in your cell, so it only accept cells that implemented this protocol.<br />
+`Don't need implement all, some methods already have default implementation.`
 
 Sample Project
 --------------
