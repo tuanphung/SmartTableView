@@ -43,34 +43,28 @@ class EventTableViewCell: UITableViewCell {
 
 // MARK: TableViewCell Configurations
 extension EventTableViewCell: LazyTableViewCellProtocol {
-    static func acceptableModelTypes() -> [AnyClass] {
-        return [Event.self]
-    }
-    
-    static func height(model: AnyObject) -> CGFloat {
+    static func height(event: Event) -> CGFloat {
         return 265
     }
     
-    func configureCell(model: AnyObject) {
-        if let event = model as? Event {
-            self.topImageView.image = UIImage(named: event.imageName)
-            
-            self.titleLabel.text = event.name
-            self.starRatingView.value = CGFloat(event.rating)
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
-            dateFormatter.dateFormat = "DDD, MMM dd, yyyy"
-            
-            self.startDateLabel.text = "-"
-            if let startDate = event.startDate {
-                self.startDateLabel.text = "\(dateFormatter.stringFromDate(startDate))"
-            }
+    func configureCell(event: Event) {
+        self.topImageView.image = UIImage(named: event.imageName)
+        
+        self.titleLabel.text = event.name
+        self.starRatingView.value = CGFloat(event.rating)
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "DDD, MMM dd, yyyy"
+        
+        self.startDateLabel.text = "-"
+        if let startDate = event.startDate {
+            self.startDateLabel.text = "\(dateFormatter.stringFromDate(startDate))"
+        }
 
-            self.endDateLabel.text = "-"
-            if let endDate = event.startDate {
-                self.endDateLabel.text = "\(dateFormatter.stringFromDate(endDate))"
-            }
+        self.endDateLabel.text = "-"
+        if let endDate = event.startDate {
+            self.endDateLabel.text = "\(dateFormatter.stringFromDate(endDate))"
         }
     }
 }

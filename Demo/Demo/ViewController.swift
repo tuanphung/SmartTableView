@@ -35,12 +35,17 @@ class ViewController: UIViewController {
         
         self.title = "LazyTableView"
         
-        self.tableView.register([RestaurantTableViewCell.self,
-                                HotelTableViewCell.self,
-                                TipTableViewCell.self,
-                                EventTableViewCell.self])
-        
+        self.tableView.register(RestaurantTableViewCell.self)
+        self.tableView.register(HotelTableViewCell.self)
+        self.tableView.register(EventTableViewCell.self)
+        self.tableView.register(TipTableViewCell.self)
+
         self.tableView.addItems(self.generateModels())
+        
+        self.tableView.onDidSelectItem = { item in
+            // Do something here.
+            print(item)
+        }
     }
     
     // Load sample data from local json file.

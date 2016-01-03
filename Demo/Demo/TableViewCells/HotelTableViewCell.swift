@@ -41,21 +41,15 @@ class HotelTableViewCell: UITableViewCell {
 
 // MARK: TableViewCell Configurations
 extension HotelTableViewCell: LazyTableViewCellProtocol {
-    static func acceptableModelTypes() -> [AnyClass] {
-        return [Hotel.self]
-    }
-    
-    static func height(model: AnyObject) -> CGFloat {
+    static func height(hotel: Hotel) -> CGFloat {
         return 250
     }
     
-    func configureCell(model: AnyObject) {
-        if let hotel = model as? Hotel {
-            self.titleLabel.text = hotel.name
-            self.topImageView.image = UIImage(named: hotel.imageName)
-            self.starRatingView.value = CGFloat(hotel.rating)
-            self.ratingPointLabel.text = "\(hotel.userRating)"
-            self.priceLabel.text = "\(hotel.price) $"
-        }
+    func configureCell(hotel: Hotel) {
+        self.titleLabel.text = hotel.name
+        self.topImageView.image = UIImage(named: hotel.imageName)
+        self.starRatingView.value = CGFloat(hotel.rating)
+        self.ratingPointLabel.text = "\(hotel.userRating)"
+        self.priceLabel.text = "\(hotel.price) $"
     }
 }
