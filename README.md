@@ -50,7 +50,7 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
 ```
 LazyTableView require some implementations in your cell, so your cell must implement this protocol.<br />
 * Don't need implement all, some methods already have default implementation.
-* You must use same ModelType for `height:` & `configureCell:` method (it can be any, but must be same). Then your cell will automatically pick up instances of ModelType and display, other ModelType will be ignored.
+* No type casts required. ModelType is based on your cell implementation (in `height:` & `configureCell:` method).
 
 Sample Project
 --------------
