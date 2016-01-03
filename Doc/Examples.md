@@ -54,7 +54,6 @@ extension RestaurantTableViewCell: LazyTableViewCellProtocol {
             self.titleLabel.text = restaurant.name
             self.reviewLabel.text = "\(restaurant.numberOfReviews) review" + (restaurant.numberOfReviews > 1 ? "s" : "")
             self.topImageView.image = UIImage(named: restaurant.imageName)
-    
             self.starRatingView.value = CGFloat(restaurant.rating)
         }
     }
