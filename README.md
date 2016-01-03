@@ -26,32 +26,33 @@ So now:
 - It's super easy to reuse UITableViewCell.
 - Models are managed by LazyTableView, not ViewController anymore.
 - Allow displaying UITableViewCells base on model type without pain. After some setup, just push models to LazyTableView, then cell will automatically pick up models and display them.
+- Support Generic and Associated types. So, no type casts required.
 
 Introduce LazyTableViewCellProtocol
 --------------
 ```swift
 public protocol LazyTableViewCellProtocol: NSObjectProtocol {
+    typealias ModelType
+    
     // Optional, default is ClassName
     static func reuseIdentifier() -> String
     
     // Optional, default is ClassName
     static func nibName() -> String?
-    static func nib() -> UINib?
     
     // Optional, default is `UITableViewAutomaticDimension`
-    static func height(model: AnyObject) -> CGFloat
-    
-    // Define what class of model that Cell can display. It will ignore all models have type not in list.
-    // This method must be implemented.
-    static func acceptableModelTypes() -> [AnyClass]
+    static func height(model: ModelType) -> CGFloat
     
     // Define how to map properties of model to UI.
     // This method must be implemented.
-    func configureCell(model: AnyObject)
+    func configureCell(model: ModelType)
 }
 ```
 Since LazyTableView require some implementations in your cell, so it only accept cells that implemented this protocol.<br />
 `Don't need implement all, some methods already have default implementation.`
+* Important:
+Since LazyTableViewCellProtocol used Associated type. So, no type casts required.
+ModelType is based on your cell implementation (in `height:` & `configureCell:` method).
 
 Sample Project
 --------------
@@ -63,7 +64,8 @@ After [some setup](Doc/Examples.md), using LazyTableView is really simple. In yo
 
 1. Register your cells:
 ```swift
-self.lazyTableView.register([RestaurantTableViewCell.self, HotelTableViewCell.self])
+self.lazyTableView.register(RestaurantTableViewCell.self)
+self.lazyTableView.register(HotelTableViewCell.self)
 ```
 2. Push your models:
 ```swift
