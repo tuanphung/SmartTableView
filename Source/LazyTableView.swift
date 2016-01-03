@@ -21,10 +21,12 @@
 
 import UIKit
 
+typealias Mapping = (heightBlock:((model: AnyObject) -> CGFloat), configureCellBlock: (cell: UITableViewCell, model: AnyObject) -> (), identifier: String, modelType: Any.Type)
+
 public class LazyTableView: UITableView {
-    var defaultSection = LazyTableViewSection()
+    public var defaultSection = LazyTableViewSection()
     
-    var onDidSelectItem: ((item: AnyObject) -> ())?
+    public var onDidSelectItem: ((item: AnyObject) -> ())?
     
     // Abstract the way to implement LoadMore feature.
     // Under implementation.
@@ -35,17 +37,17 @@ public class LazyTableView: UITableView {
         self.addItems(items)
     }
     
-    // Keep referrence to models, encapsulated into LazyTableViewSection
+    // Keep referrence to models, encapsulated into LazyTableViewSection.
     private var source = [LazyTableViewSection]()
     
-    // Keep all registered UITableViewCell that implement LazyTableViewCellProtocol.
-    private var registeredCellTypes = [LazyTableViewCellProtocol.Type]()
+    // Keep all setup for each CellType registered.
+    private var mappings = [Mapping]()
     
     // Find registed cell type that accept model.
-    private func cellTypeForModel(model: AnyObject) -> LazyTableViewCellProtocol.Type? {
-        for cellType in self.registeredCellTypes {
-            if let _ = (cellType.acceptableModelTypes().filter { model.isKindOfClass($0) }.first) {
-                return cellType
+    private func mappingForModel(model: AnyObject) -> Mapping? {
+        for mapping in mappings {
+            if mapping.modelType == model.dynamicType {
+                return mapping
             }
         }
         
@@ -96,24 +98,37 @@ public class LazyTableView: UITableView {
         self.addItems(items, section: 0)
     }
     
-    // Store cell type to query later
-    public func register(cellType: LazyTableViewCellProtocol.Type) {
-        guard var _ = self.registeredCellTypes.filter({ $0 == cellType }).first else {
-            self.registeredCellTypes.append(cellType)
+    // Register cell, setup some code blocks and store them to execute later.
+    public func register<T: LazyTableViewCellProtocol>(cellType: T.Type) {
+        let identifier = cellType.reuseIdentifier()
+        
+        guard let _ = self.dequeueReusableCellWithIdentifier(identifier) else {
+            // Create block code to execute class method `height:`
+            // This block will be executed in `tableView:heightForRowAtIndexPath:`
+            let heightBlock = { (model: AnyObject) -> CGFloat in
+                if let model = model as? T.ModelType {
+                    return cellType.height(model)
+                }
+                return 0
+            }
+            
+            // Create block code to execute method `configureCell:` of cell
+            // This block will be executed in `tableView:cellForRowAtIndexPath:`
+            let configureCellBlock = { (cell: UITableViewCell, model: AnyObject) in
+                if let cell = cell as? T, let model = model as? T.ModelType {
+                    cell.configureCell(model)
+                }
+            }
+            
+            self.mappings.append(Mapping(heightBlock, configureCellBlock, identifier, T.ModelType.self))
             
             if let nibName = cellType.nibName() {
-                self.registerNib(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: cellType.reuseIdentifier())
+                self.registerNib(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: identifier)
             }
             else {
-                self.registerClass(cellType, forCellReuseIdentifier: cellType.reuseIdentifier())
+                self.registerClass(cellType, forCellReuseIdentifier: identifier)
             }
             return
-        }
-    }
-    
-    public func register(cellTypes: [LazyTableViewCellProtocol.Type]) {
-        for cellType in cellTypes {
-            self.register(cellType)
         }
     }
     
@@ -186,25 +201,20 @@ extension LazyTableView: UITableViewDataSource, UITableViewDelegate {
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let model: AnyObject = self.source[indexPath.section].items[indexPath.row]
         
-        if let cellType = self.cellTypeForModel(model) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(cellType.reuseIdentifier(), forIndexPath: indexPath)
-            
-            let selector = Selector("configureCell:")
-            if cell.respondsToSelector(selector) {
-                cell.performSelector(selector, withObject: model)
-            }
-            
+        if let mapping = self.mappingForModel(model) {
+            let cell = tableView.dequeueReusableCellWithIdentifier(mapping.identifier, forIndexPath: indexPath)
+            mapping.configureCellBlock(cell: cell, model: model)
             return cell
+
         }
-        
         return UITableViewCell()
     }
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let model: AnyObject = self.source[indexPath.section].items[indexPath.row]
         
-        if let cellType = self.cellTypeForModel(model) {
-            return cellType.height(model)
+        if let mapping = self.mappingForModel(model) {
+            return mapping.heightBlock(model: model)
         }
         
         return 0

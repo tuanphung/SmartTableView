@@ -22,15 +22,13 @@
 import UIKit
 
 public protocol LazyTableViewCellProtocol: NSObjectProtocol {
+    typealias ModelType
+    
     // Optional, default is ClassName
     static func reuseIdentifier() -> String
     
     // Optional, default is ClassName
     static func nibName() -> String?
-    static func nib() -> UINib?
-    
-    // Optional, default is `UITableViewAutomaticDimension`
-    static func height(model: AnyObject) -> CGFloat
     
     // Draft behaviour
     // In case a model is displayed by multiple Cells, use pairCode to match model and cell.
@@ -39,13 +37,12 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     // If paircode is setup in model, and it's same to cell's paircode, it's matched. Otherwise, cell will not pick up that model to display.
     static func pairCode() -> Int?
     
-    // Define what class of model that Cell can display. It will ignore all models have type not in list.
-    // This method must be implemented.
-    static func acceptableModelTypes() -> [AnyClass]
+    // Optional, default is `UITableViewAutomaticDimension`
+    static func height(model: ModelType) -> CGFloat
     
     // Define how to map properties of model to UI.
     // This method must be implemented.
-    func configureCell(model: AnyObject)
+    func configureCell(model: ModelType)
 }
 
 public extension LazyTableViewCellProtocol {
@@ -59,7 +56,7 @@ public extension LazyTableViewCellProtocol {
         return UINib(nibName: nibName, bundle: nil)
     }
     
-    static func height(model: AnyObject) -> CGFloat { return UITableViewAutomaticDimension }
-    
     static func pairCode() -> Int? { return nil }
+    
+    static  func height(model: ModelType) -> CGFloat { return UITableViewAutomaticDimension }
 }
