@@ -1,7 +1,7 @@
 #LazyTableView
 A lazy way for smart developers to deal with UITableView.
 
-## Why LazyTableView?
+Why LazyTableView?
 --------------
 How many times do you have to implement UITableViewDatasource and UITableViewDelegate?<br />
 Is it boring? And how to deal with different UITableViewCells in one TableView?
@@ -24,9 +24,9 @@ So now:
 - Don't need to implement any methods of UITableViewDatasource and UITableViewDelegate. Most should be done in UITableViewCell.
 - It's super easy to reuse UITableViewCell.
 - Models are managed by LazyTableView, not ViewController anymore.
-- Allow displaying UITableViewCells base on model type without pain. After some setups, just push models to LazyTableView, then cell will automatically pick up models and display them.
+- Allow displaying UITableViewCells base on model type without pain. After some setup, just push models to LazyTableView, then cell will automatically pick up models and display them.
 
-## Introduce LazyTableViewCellProtocol
+Introduce LazyTableViewCellProtocol
 --------------
 ```swift
 public protocol LazyTableViewCellProtocol: NSObjectProtocol {
@@ -52,7 +52,7 @@ Sample Project
 --------------
 There's a sample project in the Demo directory. Have fun!
 
-## Usage
+Usage
 --------------
 After [some setup](Doc/Examples.md), using LazyTableView is really simple. In your ViewController, just do:
 
@@ -87,12 +87,12 @@ self.lazyTableView.onDidSelectItem = { [weak self] item in
 ### Lazy loading models from Network
 Coming soon...
 
-## Requirements
+Requirements
 --------------
 - iOS 8.0+ / Mac OS X 10.9+
 - Xcode 6.4
 
-## Installation
+Installation
 --------------
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
@@ -117,6 +117,6 @@ Then, run the following command:
 $ pod install
 ```
 
-## License
+License
 --------------
 LazyTableView is released under the MIT license. See LICENSE for details.
