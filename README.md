@@ -30,23 +30,26 @@ Introduce LazyTableViewCellProtocol
 --------------
 ```swift
 public protocol LazyTableViewCellProtocol: NSObjectProtocol {
+    // Optional, default is ClassName
     static func reuseIdentifier() -> String
     
+    // Optional, default is ClassName
     static func nibName() -> String?
-    
     static func nib() -> UINib?
     
+    // Optional, default is `UITableViewAutomaticDimension`
     static func height(model: AnyObject) -> CGFloat
     
-    // Define what class of model that Cell can display. It will ignore all models that type is not in list.
-    // This method is required overriding.
+    // Define what class of model that Cell can display. It will ignore all models have type not in list.
+    // This method must be implemented.
     static func acceptableModelTypes() -> [AnyClass]
     
     // Define how to map properties of model to UI.
-    // This method is required overriding.
+    // This method must be implemented.
     func configureCell(model: AnyObject)
 }
 ```
+Since LazyTableView require some implementation in your cell, so it only accept cells that implement LazyTableViewCellProcotol.
 
 Sample Project
 --------------
