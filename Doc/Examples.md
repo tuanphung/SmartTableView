@@ -25,12 +25,13 @@ class Hotel {
 }
 ```
 
-### Setup your UITableViewCell
+## Setup your UITableViewCell
 `By default, your cell Identifier is same to ClassName. If you use XIB to layout cell, you have to set Identifier is your ClassName.`
 
 LazyTableViewCellProtocol already support Generic and Associated types. So, no type casts required.<br />
 Your cell only accept model that same in `height:` & `configureCell:` method.
 
+### RestaurantTableViewCell
 ```swift
 class RestaurantTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
@@ -54,8 +55,8 @@ extension RestaurantTableViewCell: LazyTableViewCellProtocol {
 }
 ```
 `RestaurantTableViewCell` will only accept `Restaurant` model. Others will be ignored.
-<br />
 
+### HotelTableViewCell
 ```swift
 class HotelTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
@@ -82,10 +83,11 @@ extension HotelTableViewCell: LazyTableViewCellProtocol {
 }
 ```
 `HotelTableViewCell` will only accept `Hotel` model. Others will be ignored.
-<br />
+
+
 Finally! Your cells are ready to use.
 
-### Displaying Models
+## Displaying Models
 In your ViewController, not too much works to do.
 
 1.Register your cells:
@@ -108,7 +110,7 @@ self.lazyTableView.addItems([restaurant, hotel])
 
 ![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/Demo.gif)
 
-### Handle click event on Cell
+## Handle click event on Cell
 ```swift
 self.lazyTableView.onDidSelectItem = { [weak self] item in
     // Handle selected item here
@@ -116,5 +118,5 @@ self.lazyTableView.onDidSelectItem = { [weak self] item in
 }
 ```
 
-### Lazy loading models from Network
+## Lazy loading models from Network
 Coming soon...
