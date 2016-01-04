@@ -50,22 +50,23 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
 ```
 LazyTableView require some implementations in your cell, so your cell must implement this protocol.<br />
 * Don't need implement all, some methods already have default implementation.
-* No type casts required. ModelType is based on your cell implementation (in `height:` & `configureCell:` method).
+* No type casts required. ModelType is based on your definition.
 
 Sample Project
 --------------
 There's a sample project in the Demo directory. Have fun!
+Or follow the instructions [here] (Doc/Examples.md)
 
 Usage
 --------------
 After [some setup](Doc/Examples.md), using LazyTableView is really simple. In your ViewController, just do:
 
-1. Register your cells:
+1.Register your cells:
 ```swift
 self.lazyTableView.register(RestaurantTableViewCell.self)
 self.lazyTableView.register(HotelTableViewCell.self)
 ```
-2. Push your models:
+2.Push your models:
 ```swift
 let restaurant = Restaurant()
 ... // Some extra initializions
@@ -76,7 +77,7 @@ let hotel = Hotel()
 self.lazyTableView.addItems([restaurant, hotel])
 ```
 
-3. Enjoys it!
+3.Enjoys it!
 
 ![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/Demo.gif)
 
