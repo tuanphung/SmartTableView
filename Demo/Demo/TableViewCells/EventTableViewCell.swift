@@ -43,11 +43,13 @@ class EventTableViewCell: UITableViewCell {
 
 // MARK: TableViewCell Configurations
 extension EventTableViewCell: LazyTableViewCellProtocol {
-    static func height(event: Event) -> CGFloat {
+    typealias ModelType = Event
+    
+    static func height(event: ModelType) -> CGFloat {
         return 265
     }
     
-    func configureCell(event: Event) {
+    func configureCell(event: ModelType) {
         self.topImageView.image = UIImage(named: event.imageName)
         
         self.titleLabel.text = event.name

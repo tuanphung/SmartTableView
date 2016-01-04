@@ -41,11 +41,13 @@ class HotelTableViewCell: UITableViewCell {
 
 // MARK: TableViewCell Configurations
 extension HotelTableViewCell: LazyTableViewCellProtocol {
-    static func height(hotel: Hotel) -> CGFloat {
+    typealias ModelType = Hotel
+    
+    static func height(hotel: ModelType) -> CGFloat {
         return 250
     }
     
-    func configureCell(hotel: Hotel) {
+    func configureCell(hotel: ModelType) {
         self.titleLabel.text = hotel.name
         self.topImageView.image = UIImage(named: hotel.imageName)
         self.starRatingView.value = CGFloat(hotel.rating)

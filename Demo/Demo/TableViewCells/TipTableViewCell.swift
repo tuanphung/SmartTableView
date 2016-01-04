@@ -35,11 +35,13 @@ class TipTableViewCell: UITableViewCell {
 
 // MARK: TableViewCell Configurations
 extension TipTableViewCell: LazyTableViewCellProtocol {
-    static func height(tip: Tip) -> CGFloat {
+    typealias ModelType = Tip
+    
+    static func height(tip: ModelType) -> CGFloat {
         return 60
     }
     
-    func configureCell(tip: Tip) {
+    func configureCell(tip: ModelType) {
         self.nameLabel.text = tip.name
     }
 }

@@ -39,15 +39,16 @@ class RestaurantTableViewCell: UITableViewCell {
 
 // MARK: TableViewCell Configurations
 extension RestaurantTableViewCell: LazyTableViewCellProtocol {
-    static func height(restaurant: Restaurant) -> CGFloat {
+    typealias ModelType = Restaurant
+    
+    static func height(restaurant: ModelType) -> CGFloat {
         return 230
     }
     
-    func configureCell(restaurant: Restaurant) {
+    func configureCell(restaurant: ModelType) {
         self.titleLabel.text = restaurant.name
         self.reviewLabel.text = "\(restaurant.numberOfReviews) review" + (restaurant.numberOfReviews > 1 ? "s" : "")
         self.topImageView.image = UIImage(named: restaurant.imageName)
-
         self.starRatingView.value = CGFloat(restaurant.rating)
     }
 }
