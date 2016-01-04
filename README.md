@@ -54,7 +54,7 @@ LazyTableView require some implementations in your cell, so your cell must imple
 
 Sample Project
 --------------
-There's a sample project in the Demo directory. Or follow the instructions [here] (Doc/Examples.md)<br />
+There's a sample project in the Demo directory. Or follow the instructions [here] (Doc/Examples.md).<br />
 Have fun!
 
 Usage
