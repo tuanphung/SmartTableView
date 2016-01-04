@@ -27,7 +27,7 @@ class Hotel {
 
 ## Setup your UITableViewCell
 LazyTableViewCellProtocol already support Generic and Associated types. So, no type casts required.<br />
-You must use same ModelType for `height:` & `configureCell:` method (it can be any, but must be same). Then your cell will automatically pick up instances of ModelType and display, other ModelType will be ignored.
+ModelType can be Any. Your cell will automatically pick up instances of ModelType and display, other ModelType will be ignored.
 
 `By default, your cell Identifier is same to ClassName. If you use XIB to layout cell, you have to set Identifier is your ClassName.`
 
@@ -42,11 +42,13 @@ class RestaurantTableViewCell: UITableViewCell {
 }
 
 extension RestaurantTableViewCell: LazyTableViewCellProtocol {
-    static func height(restaurant: Restaurant) -> CGFloat {
+    typealias ModelType = Restaurant
+    
+    static func height(restaurant: ModelType) -> CGFloat {
         return 230
     }
     
-    func configureCell(restaurant: Restaurant) {
+    func configureCell(restaurant: ModelType) {
         self.titleLabel.text = restaurant.name
         self.reviewLabel.text = "\(restaurant.numberOfReviews) review" + (restaurant.numberOfReviews > 1 ? "s" : "")
         self.topImageView.image = UIImage(named: restaurant.imageName)
@@ -69,11 +71,13 @@ class HotelTableViewCell: UITableViewCell {
 }
 
 extension HotelTableViewCell: LazyTableViewCellProtocol {
-    static func height(hotel: Hotel) -> CGFloat {
+    typealias ModelType = Hotel
+    
+    static func height(hotel: ModelType) -> CGFloat {
         return 250
     }
     
-    func configureCell(hotel: Hotel) {
+    func configureCell(hotel: ModelType) {
         self.titleLabel.text = hotel.name
         self.topImageView.image = UIImage(named: hotel.imageName)
         self.starRatingView.value = CGFloat(hotel.rating)
@@ -106,8 +110,6 @@ self.lazyTableView.addItems([restaurant, hotel])
 ```
 
 3.Enjoys it!
-
-![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/Demo.gif)
 
 ## Handle click event on Cell
 ```swift
