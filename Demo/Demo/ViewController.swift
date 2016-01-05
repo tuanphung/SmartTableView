@@ -28,7 +28,7 @@ enum ModelType: Int {
 }
 
 class ViewController: UIViewController {
-    @IBOutlet var tableView: ATTableView!
+    @IBOutlet var tableView: LazyTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
