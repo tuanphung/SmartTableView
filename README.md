@@ -12,9 +12,9 @@ LazyTableView is for you, it's easy to display model in UITableView. Also suppor
 ### Traditional way
 ![alt tag] (https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/OldWay.png)
 
-Your ViewController have to:
+Your ViewController has to:
 - Implement a lot of methods to adapt UITableViewDatasource and UITableViewDelegate.
-- Do some suck things like `if else` condition if you need to display different UITableViewCells in one TableView.
+- Do some sucked things like `if else` condition if you need to display different UITableViewCells in one TableView.
 - Maintain models.
 - Hard to reuse UITableView.
 
@@ -26,7 +26,7 @@ So now:
 - It's super easy to reuse UITableViewCell.
 - Models are managed by LazyTableView, not ViewController anymore.
 - Allow displaying UITableViewCells base on model type without pain. After some setup, just push models to LazyTableView, then cell will automatically pick up models and display them.
-- Support Generic and Associated types. So, no type casts required.
+- Support Generic and Associated types. So no type casts required.
 
 Introduce LazyTableViewCellProtocol
 --------------
@@ -48,8 +48,8 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     func configureCell(model: ModelType)
 }
 ```
-LazyTableView require some implementations in your cell, so your cell must implement this protocol.<br />
-* Don't need implement all, some methods already have default implementation.
+LazyTableView requires some implementations in your cell, so your cell must implement this protocol.<br />
+* Don't need to implement all, some methods already have default implementation.
 * No type casts required. ModelType is based on your definition.
 
 Sample Project
@@ -59,7 +59,7 @@ Have fun!
 
 Usage
 --------------
-After [some setup](Doc/Examples.md), using LazyTableView is really simple. In your ViewController, just do:
+After [some setup](Doc/Examples.md), using LazyTableView is really simple. In your ViewController, just follow these steps below:
 
 1.Register your cells:
 ```swift
@@ -77,7 +77,7 @@ let hotel = Hotel()
 self.lazyTableView.addItems([restaurant, hotel])
 ```
 
-3.Enjoys it!
+3.Enjoy it!
 
 ![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/Demo.gif)
 
