@@ -67,7 +67,7 @@ public class ATTableView: UITableView {
         self.initialize()
     }
     
-    internal func initialize() {
+    public func initialize() {
         self.dataSource = self
         self.delegate = self
         
