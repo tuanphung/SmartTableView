@@ -30,9 +30,9 @@ public class ATTableView: UITableView {
     
     // Abstract the way to implement LoadMore feature.
     // Under implementation.
-    var shouldLoadMore: Bool = false
-    var onLoadMore: (() -> ())?
-    func loadMoreDidCompleteWithItems(items: [AnyObject]) {
+    public var shouldLoadMore: Bool = false
+    public var onLoadMore: (() -> ())?
+    public func loadMoreDidCompleteWithItems(items: [AnyObject]) {
         self.shouldLoadMore = (items.count == 0) ? false : true
         self.addItems(items)
     }
