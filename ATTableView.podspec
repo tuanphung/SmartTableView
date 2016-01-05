@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                   ATTableView is for you, it's easy to display model in UITableView. Also support different UITableViewCells.
                    DESC
 
-  s.homepage     = "https://github.com/tuanphung/LazyTableView"
+  s.homepage     = "https://github.com/tuanphung/ATTableView"
 
   s.license      = "MIT"
 
