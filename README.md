@@ -7,7 +7,7 @@ How many times do you have to implement UITableViewDatasource and UITableViewDel
 Is it boring? And how to deal with different UITableViewCells in one TableView?
 
 > You're smart, so you need a smart way to do it.<br />
-LazyTableView is for you, it's easy to display model in UITableView. Also support different UITableViewCells.
+ATTableView is for you, it's easy to display model in UITableView. Also support different UITableViewCells.
 
 ### Traditional way
 ![alt tag] (/Doc/Assets/OldWay.png)
@@ -79,7 +79,7 @@ self.tableView.addItems([restaurant, hotel])
 
 3.Enjoy it!
 
-![alt tag](https://github.com/tuanphung/LazyTableView/blob/master/Doc/Assets/Demo.gif)
+![alt tag](Doc/Assets/Demo.gif)
 
 ### Handle click event on Cell
 Just easy like this:
