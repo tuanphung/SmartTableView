@@ -55,7 +55,7 @@ public class ATTableView: UITableView {
     }
 
     // Initializers
-    override init(frame: CGRect, style: UITableViewStyle) {
+    public override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         
         self.initialize()
