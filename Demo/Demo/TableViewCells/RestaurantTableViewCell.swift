@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 
 import UIKit
-import LazyTableView
+import ATTableView
 import HCSStarRatingView
 
 class RestaurantTableViewCell: UITableViewCell {
@@ -38,7 +38,7 @@ class RestaurantTableViewCell: UITableViewCell {
 }
 
 // MARK: TableViewCell Configurations
-extension RestaurantTableViewCell: LazyTableViewCellProtocol {
+extension RestaurantTableViewCell: ATTableViewCellProtocol {
     typealias ModelType = Restaurant
     
     static func height(restaurant: ModelType) -> CGFloat {

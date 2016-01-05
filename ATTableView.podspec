@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "LazyTableView-Swift"
+  s.name         = "ATTableView"
   s.version      = "1.0"
   s.summary      = "A lazy way for smart developers to deal with UITableView."
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                   Is it boring? And how to deal with different UITableViewCells in one TableView?
 
                   You're smart so you need to find a smart way to do it.
-                  LazyTableView is for you, it's easy to display model in UITableView. Also support different UITableViewCells.
+                  ATTableView is for you, it's easy to display model in UITableView. Also support different UITableViewCells.
                    DESC
 
   s.homepage     = "https://github.com/tuanphung/LazyTableView"
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/tuanphung/LazyTableView.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/tuanphung/ATTableView.git", :tag => s.version }
   s.source_files  = "Source/*.swift"
 
   s.requires_arc = true

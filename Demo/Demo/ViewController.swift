@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 
 import UIKit
-import LazyTableView
+import ATTableView
 import SwiftyJSON
 
 enum ModelType: Int {
@@ -28,12 +28,12 @@ enum ModelType: Int {
 }
 
 class ViewController: UIViewController {
-    @IBOutlet var tableView: LazyTableView!
+    @IBOutlet var tableView: ATTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "LazyTableView"
+        self.title = "ATTableView"
         
         self.tableView.register(RestaurantTableViewCell.self)
         self.tableView.register(HotelTableViewCell.self)

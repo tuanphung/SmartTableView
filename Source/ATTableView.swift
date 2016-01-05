@@ -23,8 +23,8 @@ import UIKit
 
 typealias Mapping = (heightBlock:((model: AnyObject) -> CGFloat), configureCellBlock: (cell: UITableViewCell, model: AnyObject) -> (), identifier: String, modelType: Any.Type)
 
-public class LazyTableView: UITableView {
-    public var defaultSection = LazyTableViewSection()
+public class ATTableView: UITableView {
+    public var defaultSection = ATTableViewSection()
     
     public var onDidSelectItem: ((item: AnyObject) -> ())?
     
@@ -38,7 +38,7 @@ public class LazyTableView: UITableView {
     }
     
     // Keep referrence to models, encapsulated into LazyTableViewSection.
-    private var source = [LazyTableViewSection]()
+    private var source = [ATTableViewSection]()
     
     // Keep all setup for each CellType registered.
     private var mappings = [Mapping]()
@@ -75,11 +75,11 @@ public class LazyTableView: UITableView {
         self.source.append(defaultSection)
     }
 
-    public func addSection(section: LazyTableViewSection, atIndex index: Int) {
+    public func addSection(section: ATTableViewSection, atIndex index: Int) {
         self.source.insert(section, atIndex: index)
     }
     
-    public func addSection(section: LazyTableViewSection) {
+    public func addSection(section: ATTableViewSection) {
         self.source.append(section)
         
         // Render data
@@ -99,7 +99,7 @@ public class LazyTableView: UITableView {
     }
     
     // Register cell, setup some code blocks and store them to execute later.
-    public func register<T: LazyTableViewCellProtocol>(cellType: T.Type) {
+    public func register<T: ATTableViewCellProtocol>(cellType: T.Type) {
         let identifier = cellType.reuseIdentifier()
         
         guard let _ = self.dequeueReusableCellWithIdentifier(identifier) else {
@@ -152,7 +152,7 @@ public class LazyTableView: UITableView {
     }
 }
 
-extension LazyTableView: UITableViewDataSource, UITableViewDelegate {
+extension ATTableView: UITableViewDataSource, UITableViewDelegate {
     // Configure sections
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return self.source.count

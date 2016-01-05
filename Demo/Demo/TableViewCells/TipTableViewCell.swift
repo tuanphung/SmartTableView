@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 
 import UIKit
-import LazyTableView
+import ATTableView
 
 class TipTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
@@ -34,7 +34,7 @@ class TipTableViewCell: UITableViewCell {
 }
 
 // MARK: TableViewCell Configurations
-extension TipTableViewCell: LazyTableViewCellProtocol {
+extension TipTableViewCell: ATTableViewCellProtocol {
     typealias ModelType = Tip
     
     static func height(tip: ModelType) -> CGFloat {

@@ -21,7 +21,7 @@
 
 import UIKit
 
-public protocol LazyTableViewCellProtocol: NSObjectProtocol {
+public protocol ATTableViewCellProtocol: NSObjectProtocol {
     typealias ModelType
     
     // Optional, default is ClassName
@@ -45,7 +45,7 @@ public protocol LazyTableViewCellProtocol: NSObjectProtocol {
     func configureCell(model: ModelType)
 }
 
-public extension LazyTableViewCellProtocol {
+public extension ATTableViewCellProtocol {
     static func reuseIdentifier() -> String { return "\(self)" }
     
     static func nibName() -> String? { return "\(self)" }

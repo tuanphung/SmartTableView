@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class LazyTableViewSection {
+public class ATTableViewSection {
     let DefaultHeaderHeight: CGFloat = 22
     let DefaultFooterHeight: CGFloat = 22
     

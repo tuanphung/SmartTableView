@@ -1,6 +1,0 @@
-framework module LazyTableView {
-  umbrella header "LazyTableView-umbrella.h"
-
-  export *
-  module * { export * }
-}

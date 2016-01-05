@@ -9,7 +9,7 @@ inhibit_all_warnings!
 # This was added from CocoaPods 0.36, to support libraries is written by Swift.
 use_frameworks!
 
-pod 'LazyTableView', :path => '../'
+pod 'ATTableView', :path => '../'
 
 pod 'HCSStarRatingView'
 pod 'LoremIpsum', '~> 1.0.0'

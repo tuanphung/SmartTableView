@@ -23,7 +23,7 @@
 // THE SOFTWARE.
 
 import UIKit
-import LazyTableView
+import ATTableView
 import HCSStarRatingView
 
 class EventTableViewCell: UITableViewCell {
@@ -42,7 +42,7 @@ class EventTableViewCell: UITableViewCell {
 }
 
 // MARK: TableViewCell Configurations
-extension EventTableViewCell: LazyTableViewCellProtocol {
+extension EventTableViewCell: ATTableViewCellProtocol {
     typealias ModelType = Event
     
     static func height(event: ModelType) -> CGFloat {
