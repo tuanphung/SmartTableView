@@ -3,7 +3,7 @@
 ## Setup Your Model
 Nothing special, just reuse models you made before.
 
-For example, I create two models below:
+For example, I created two models below:
 ```swift
 class Restaurant {
     // Properties
@@ -26,7 +26,7 @@ class Hotel {
 ```
 
 ## Setup your UITableViewCell
-LazyTableViewCellProtocol already support Generic and Associated types. So, no type casts required.<br />
+LazyTableViewCellProtocol have already supported Generic and Associated types. So, no type casts required.<br />
 ModelType can be Any. Your cell will automatically pick up instances of ModelType and display, other ModelType will be ignored.
 
 `By default, your cell Identifier is same to ClassName. If you use XIB to layout cell, you have to set Identifier is your ClassName.`
@@ -109,7 +109,7 @@ let hotel = Hotel()
 self.lazyTableView.addItems([restaurant, hotel])
 ```
 
-3.Enjoys it!
+3.Enjoy it!
 
 ## Handle click event on Cell
 ```swift
