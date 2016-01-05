@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "LazyTableView"
+  s.name         = "LazyTableView-Swift"
   s.version      = "1.0"
   s.summary      = "A lazy way for smart developers to deal with UITableView."
 
