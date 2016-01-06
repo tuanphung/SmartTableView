@@ -92,7 +92,7 @@ public class ATTableView: UITableView {
         self.reloadData()
     }
     
-    public func addItems(items: [Any]?, section: Int) {
+    public func addItems(items: [Any], section: Int) {
         let section = self.source[section]
         section.addItems(items)
         
@@ -100,8 +100,14 @@ public class ATTableView: UITableView {
         self.reloadData()
     }
     
-    public func addItems(items: [Any]?) {
+    public func addItems(items: [Any]) {
         self.addItems(items, section: 0)
+    }
+    
+    // To fix issue `array cannot be bridged from Objective-C` when push array of AnyObject.
+    // https://forums.developer.apple.com/thread/28678
+    public func addItems(items: [AnyObject]) {
+        self.addItems(items.map { $0 as AnyObject }, section: 0)
     }
     
     // Register cell, setup some code blocks and store them to execute later.

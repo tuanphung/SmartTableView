@@ -49,8 +49,8 @@ class ViewController: UIViewController {
     }
     
     // Load sample data from local json file.
-    func generateModels() -> [Any] {
-        var models = [Any]()
+    func generateModels() -> [AnyObject] {
+        var models = [AnyObject]()
         
         let path = NSBundle.mainBundle().pathForResource("data", ofType: "json")
         let data = NSData(contentsOfFile: path!)!
