@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         self.tableView.register(EventTableViewCell.self)
         self.tableView.register(TipTableViewCell.self)
 
-        self.tableView.addItems(self.generateModels())
+        self.tableView.addObjects(self.generateModels())
         
         self.tableView.onDidSelectItem = { item in
             // Do something here.

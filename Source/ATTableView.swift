@@ -106,8 +106,16 @@ public class ATTableView: UITableView {
     
     // To fix issue `array cannot be bridged from Objective-C` when push array of AnyObject.
     // https://forums.developer.apple.com/thread/28678
-    public func addItems(items: [AnyObject]) {
-        self.addItems(items.map { $0 as AnyObject }, section: 0)
+    public func addObjects(objects: [AnyObject]) {
+        self.addObjects(objects, section: 0)
+    }
+    
+    public func addObjects(objects: [AnyObject], section: Int) {
+        let section = self.source[section]
+        section.addItems(objects.map { $0 as AnyObject })
+        
+        // Render data
+        self.reloadData()
     }
     
     // Register cell, setup some code blocks and store them to execute later.
