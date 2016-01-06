@@ -23,8 +23,14 @@ import UIKit
 
 typealias Mapping = (heightBlock:((model: AnyObject) -> CGFloat), configureCellBlock: (cell: UITableViewCell, model: AnyObject) -> (), identifier: String, modelType: Any.Type)
 
+public class ATTableViewDelegateConfiguration {
+    public var scrollViewDidScroll: ((scrollView: UIScrollView) -> ())?
+}
+
 public class ATTableView: UITableView {
     public var defaultSection = ATTableViewSection()
+    
+    public var delegateConfiguration = ATTableViewDelegateConfiguration()
     
     public var onDidSelectItem: ((item: AnyObject) -> ())?
     
@@ -152,7 +158,7 @@ public class ATTableView: UITableView {
     }
 }
 
-extension ATTableView: UITableViewDataSource, UITableViewDelegate {
+extension ATTableView: UITableViewDataSource {
     // Configure sections
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return self.source.count
@@ -163,39 +169,14 @@ extension ATTableView: UITableViewDataSource, UITableViewDelegate {
         return self.source[section].headerTitle
     }
     
-    public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return self.source[section].customHeaderView?(section: section)
-    }
-    
-    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.source[section].headerHeight
-    }
-    
     // Configure footer for section
     public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return self.source[section].footerTitle
     }
     
-    public func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return self.source[section].customFooterView?(section: section)
-    }
-    
-    public func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return self.source[section].footerHeight
-    }
-    
     // Configure cells
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.source[section].items.count
-    }
-    
-    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if shouldLoadMore {
-            // For now, just apply load more for the first section
-            if indexPath.section == 0 && indexPath.row == defaultSection.items.count - 1 {
-                self.onLoadMore?()
-            }
-        }
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -219,9 +200,43 @@ extension ATTableView: UITableViewDataSource, UITableViewDelegate {
         
         return 0
     }
+}
+
+extension ATTableView: UITableViewDelegate {
+    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if shouldLoadMore {
+            // For now, just apply load more for the first section
+            if indexPath.section == 0 && indexPath.row == defaultSection.items.count - 1 {
+                self.onLoadMore?()
+            }
+        }
+    }
+    
+    // Customize Section Header
+    public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.source[section].customHeaderView?(section: section)
+    }
+    
+    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.source[section].headerHeight
+    }
+
+    // Customize Section Footer
+    public func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return self.source[section].customFooterView?(section: section)
+    }
+    
+    public func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return self.source[section].footerHeight
+    }
     
     // Handle actions
     public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.onDidSelectItem?(item: self.source[indexPath.section].items[indexPath.row])
+    }
+    
+    // ScrollViewDelegate
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.delegateConfiguration.scrollViewDidScroll?(scrollView: scrollView)
     }
 }
