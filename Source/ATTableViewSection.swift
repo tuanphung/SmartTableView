@@ -49,9 +49,9 @@ public class ATTableViewSection {
     var footerHeight: CGFloat = 0.0
     var customFooterView: ((section: Int) -> UIView?)?
     
-    var items: [AnyObject]
+    var items: [Any]
     
-    init(headerTitle: String?, footerTitle: String?, items: [AnyObject]) {
+    init(headerTitle: String?, footerTitle: String?, items: [Any]) {
         self.headerTitle = headerTitle
         self.footerTitle = footerTitle
         self.items = items
@@ -61,11 +61,11 @@ public class ATTableViewSection {
         self.init(headerTitle: nil, footerTitle: nil, items: [])
     }
     
-    convenience init(items: [AnyObject]) {
+    convenience init(items: [Any]) {
         self.init(headerTitle: nil, footerTitle: nil, items: items)
     }
     
-    func addItems(newItems: [AnyObject]?) {
+    func addItems(newItems: [Any]?) {
         guard let newItems = newItems else { return }
         
         self.items.appendContentsOf(newItems)

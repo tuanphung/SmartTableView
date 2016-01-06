@@ -21,7 +21,7 @@
 
 import UIKit
 
-typealias Mapping = (heightBlock:((model: AnyObject) -> CGFloat), configureCellBlock: (cell: UITableViewCell, model: AnyObject) -> (), identifier: String, modelType: Any.Type)
+typealias Mapping = (heightBlock:((model: Any) -> CGFloat), configureCellBlock: (cell: UITableViewCell, model: Any) -> (), identifier: String, modelType: Any.Type)
 
 public class ATTableViewDelegateConfiguration {
     public var scrollViewDidScroll: ((scrollView: UIScrollView) -> ())?
@@ -32,13 +32,13 @@ public class ATTableView: UITableView {
     
     public var delegateConfiguration = ATTableViewDelegateConfiguration()
     
-    public var onDidSelectItem: ((item: AnyObject) -> ())?
+    public var onDidSelectItem: ((item: Any) -> ())?
     
     // Abstract the way to implement LoadMore feature.
     // Under implementation.
     public var shouldLoadMore: Bool = false
     public var onLoadMore: (() -> ())?
-    public func loadMoreDidCompleteWithItems(items: [AnyObject]) {
+    public func loadMoreDidCompleteWithItems(items: [Any]) {
         self.shouldLoadMore = (items.count == 0) ? false : true
         self.addItems(items)
     }
@@ -50,7 +50,7 @@ public class ATTableView: UITableView {
     private var mappings = [Mapping]()
     
     // Find registed cell type that accept model.
-    private func mappingForModel(model: AnyObject) -> Mapping? {
+    private func mappingForModel(model: Any) -> Mapping? {
         for mapping in mappings {
             if mapping.modelType == model.dynamicType {
                 return mapping
@@ -92,7 +92,7 @@ public class ATTableView: UITableView {
         self.reloadData()
     }
     
-    public func addItems(items: [AnyObject]?, section: Int) {
+    public func addItems(items: [Any]?, section: Int) {
         let section = self.source[section]
         section.addItems(items)
         
@@ -100,7 +100,7 @@ public class ATTableView: UITableView {
         self.reloadData()
     }
     
-    public func addItems(items: [AnyObject]?) {
+    public func addItems(items: [Any]?) {
         self.addItems(items, section: 0)
     }
     
@@ -111,7 +111,7 @@ public class ATTableView: UITableView {
         guard let _ = self.dequeueReusableCellWithIdentifier(identifier) else {
             // Create block code to execute class method `height:`
             // This block will be executed in `tableView:heightForRowAtIndexPath:`
-            let heightBlock = { (model: AnyObject) -> CGFloat in
+            let heightBlock = { (model: Any) -> CGFloat in
                 if let model = model as? T.ModelType {
                     return cellType.height(model)
                 }
@@ -120,7 +120,7 @@ public class ATTableView: UITableView {
             
             // Create block code to execute method `configureCell:` of cell
             // This block will be executed in `tableView:cellForRowAtIndexPath:`
-            let configureCellBlock = { (cell: UITableViewCell, model: AnyObject) in
+            let configureCellBlock = { (cell: UITableViewCell, model: Any) in
                 if let cell = cell as? T, let model = model as? T.ModelType {
                     cell.configureCell(model)
                 }
@@ -180,7 +180,7 @@ extension ATTableView: UITableViewDataSource {
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let model: AnyObject = self.source[indexPath.section].items[indexPath.row]
+        let model: Any = self.source[indexPath.section].items[indexPath.row]
         
         if let mapping = self.mappingForModel(model) {
             let cell = tableView.dequeueReusableCellWithIdentifier(mapping.identifier, forIndexPath: indexPath)
@@ -192,7 +192,7 @@ extension ATTableView: UITableViewDataSource {
     }
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let model: AnyObject = self.source[indexPath.section].items[indexPath.row]
+        let model: Any = self.source[indexPath.section].items[indexPath.row]
         
         if let mapping = self.mappingForModel(model) {
             return mapping.heightBlock(model: model)

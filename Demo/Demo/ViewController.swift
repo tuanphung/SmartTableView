@@ -28,7 +28,7 @@ enum ModelType: Int {
 }
 
 class ViewController: UIViewController {
-    @IBOutlet var tableView: LazyTableView!
+    @IBOutlet var tableView: ATTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +49,8 @@ class ViewController: UIViewController {
     }
     
     // Load sample data from local json file.
-    func generateModels() -> [AnyObject] {
-        var models = [AnyObject]()
+    func generateModels() -> [Any] {
+        var models = [Any]()
         
         let path = NSBundle.mainBundle().pathForResource("data", ofType: "json")
         let data = NSData(contentsOfFile: path!)!
