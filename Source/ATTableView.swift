@@ -38,7 +38,8 @@ public class ATTableView: UITableView {
     // Under implementation.
     public var shouldLoadMore: Bool = false
     public var onLoadMore: (() -> ())?
-    public func loadMoreDidCompleteWithItems(items: [Any]) {
+    
+    public func loadDataCompletedWithItems(items: [Any]) {
         self.shouldLoadMore = (items.count == 0) ? false : true
         self.addItems(items)
     }
@@ -217,15 +218,6 @@ extension ATTableView: UITableViewDataSource {
 }
 
 extension ATTableView: UITableViewDelegate {
-    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if shouldLoadMore {
-            // For now, just apply load more for the first section
-            if indexPath.section == 0 && indexPath.row == defaultSection.items.count - 1 {
-                self.onLoadMore?()
-            }
-        }
-    }
-    
     // Customize Section Header
     public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return self.source[section].customHeaderView?(section: section)
@@ -251,6 +243,13 @@ extension ATTableView: UITableViewDelegate {
     
     // ScrollViewDelegate
     public func scrollViewDidScroll(scrollView: UIScrollView) {
+        if shouldLoadMore {
+            // For now, just apply load more for the first section
+            if scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.bounds.height) {
+                self.onLoadMore?()
+            }
+        }
+        
         self.delegateConfiguration.scrollViewDidScroll?(scrollView: scrollView)
     }
 }
