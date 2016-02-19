@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ATTableView"
-  s.version      = "1.1"
+  s.version      = "1.2"
   s.summary      = "A lazy way for smart developers to deal with UITableView."
 
   s.description  = <<-DESC
