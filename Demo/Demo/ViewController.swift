@@ -28,7 +28,7 @@ enum ModelType: Int {
 }
 
 class ViewController: UIViewController {
-    @IBOutlet var tableView: LazyTableView!
+    @IBOutlet var tableView: ATTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         self.tableView.register(EventTableViewCell.self)
         self.tableView.register(TipTableViewCell.self)
 
-        self.tableView.addItems(self.generateModels())
+        self.tableView.addObjects(self.generateModels())
         
         self.tableView.onDidSelectItem = { item in
             // Do something here.

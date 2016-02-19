@@ -1,5 +1,5 @@
 PODS:
-  - ATTableView (1.0)
+  - ATTableView (1.1)
   - HCSStarRatingView (1.4.3)
   - LoremIpsum (1.0.0)
   - SwiftyJSON (2.3.2)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ATTableView: d77d985ed1caa0c1b0cacba78bf78a7b8e190fcb
+  ATTableView: 6dc6dad4ae43685edbddc42ef296f1261c4bd387
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   LoremIpsum: 9029c55d36501b2ee0b05cc9ecda11d3a0479160
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a

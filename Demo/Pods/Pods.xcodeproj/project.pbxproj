@@ -9,27 +9,28 @@
 /* Begin PBXBuildFile section */
 		0143AFA731F39D8843EE94DA4ABAF895 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = A58FB8F38D0E0E80BDDC481DA9A63830 /* Info.plist */; };
 		07820AF6033E843F2C1C5983B97DF0BE /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABA0373E81C7B079319A2570B1CDC5A /* LoremIpsum.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		11D09CFA33F1CCA6207B75CA504B1605 /* ATTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90758D9CDF0CC890CBFC8C7B3968F11 /* ATTableView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1C3B775E9CA2B4C768A812A18EA794C5 /* ATTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E276085786CF9A336DB201773239FD85 /* ATTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20A8A5D4B71A36E2AE4BC795460DB96F /* ATTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FAD1EDF02691F8B03305596E1862F9 /* ATTableView-dummy.m */; };
+		1C40C182166BF685DCDE8B13411F1912 /* ATTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4757B65A4B988616327045997513AB /* ATTableViewSection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2DE6DDA4DF6CC21A133100EE9EFD16BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		2E10A50772722EFA48D2899C1A3C8135 /* ATTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7B8C654D3A6295CB8CF8CE43A9BAA /* ATTableViewCellProtocol.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3D8093CE803C15AE494F410EF37A5EA2 /* HCSStarRatingView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D0763A7BDDC303F7D57701D3BD7BBF0 /* HCSStarRatingView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4244456AA4B0F0C00FA4FC3D927A3DD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		52A20E9E6E831B72D8622A39BA1960B9 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5807915C2D10841F07EDD90EE3348117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		66D4F6A0E0B59C1EA811645A601041DD /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
+		678AECA78B88365272D2119B252DCB1D /* ATTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D01F81EA774A52410FE66AC1DC25B3 /* ATTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		715574B1B61DADE56FE6DED3FF772CFF /* HCSStarRatingView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEFB2206D61A5D34782A5FEDD5173AA /* HCSStarRatingView-dummy.m */; };
 		7B264E7EE566C8DDE2BED6812EE5AF52 /* LoremIpsum-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D8F6A986348CD4FA628F46F8D5E62 /* LoremIpsum-dummy.m */; };
 		8C707E21A6603CE00D7FD6909942EC08 /* LoremIpsum.h in Headers */ = {isa = PBXBuildFile; fileRef = 32FEA3CCE8E9349886125F6307DD5142 /* LoremIpsum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9460D27C3C09EF4DDCBE4B1E5D837D25 /* ATTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C693F7BA690BC8BEBCE312E1B30AC /* ATTableView-dummy.m */; };
+		9CA9F8C098F8A51543AF6DEBAF858F98 /* ATSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24716A80337A52E449B3F2477CEA3E8 /* ATSignal.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9DA6E256064D9284E6CF33A0DEE56EFF /* HCSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2198D11DFCC02803766081D3479F57 /* HCSStarRatingView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AF0166E0645A0FA2BE707C1B27FACC39 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B59E28AA392698463CF3E60379BC /* SwiftyJSON.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B08A997907029A9103F10FBB944D2DFA /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B30E446CCEA2E4085C60F15954C4133 /* SwiftyJSON-dummy.m */; };
 		B108C54CB5786AF13F1797FBB852FFE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		B4B684EB3F4218006578A0E429543303 /* ATTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805162717E85A940B720E5A64FEFEE23 /* ATTableViewSection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B8FE21B4721C2A3A3C8717B21C985AEF /* ATTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA24430FAF41B7D737458BB83A59B95 /* ATTableViewCellProtocol.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C470A437D2BD8F101DA24A4542959090 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD3FDA5177C366218F8ED91918B2AD4 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D20B02E0313333C11FEFE4CACC571E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		D561A877277BC8FF22B958F4FFE5D1EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		E1766F798F04B4EB0DDA9C7720324408 /* LoremIpsum-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9A1B7DDB6AFA22E6D630CB8C11B0F8 /* LoremIpsum-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E64DE046D6D6206FEBAB5847DCB81D1C /* ATTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F94BD6F0DE7D50F4B984EE12DCA52D /* ATTableView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F0B28EC8EEBA756478CD41131DA47A85 /* HCSStarRatingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03998F0CC38C58769C0CF87211A286DE /* HCSStarRatingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7FB4C3A6B4E45E257184356270F5BFAA;
+			remoteGlobalIDString = 6A83BD6017CF82C00699934F721B1A29;
 			remoteInfo = ATTableView;
 		};
 		CB16DAA9176C3FECF7373ABF90DAFC5F /* PBXContainerItemProxy */ = {
@@ -74,44 +75,45 @@
 		2020F612F9B920CD8D2D4E16CCFB6170 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2448BEBC438EBF22ECA1E0AC68857233 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		306F18BA8DCF85FED95ED1FDB8B6F60C /* ATTableView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ATTableView.xcconfig; sourceTree = "<group>"; };
 		32FEA3CCE8E9349886125F6307DD5142 /* LoremIpsum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = LoremIpsum/LoremIpsum.h; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		42E6FAC6854402B91CCA5FFE964B7145 /* LoremIpsum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoremIpsum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ABA0373E81C7B079319A2570B1CDC5A /* LoremIpsum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LoremIpsum.m; path = LoremIpsum/LoremIpsum.m; sourceTree = "<group>"; };
-		4CAFABB7CECCECD938E6603710ED3103 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F67D955C500FE06E799BC4649CDF5A8 /* HCSStarRatingView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HCSStarRatingView.modulemap; sourceTree = "<group>"; };
+		4F97D6A5726C861EB6D1BF2F97624F3C /* ATTableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ATTableView-prefix.pch"; sourceTree = "<group>"; };
 		563B9DFE46D45886B0FC32DEC4D279E7 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		5C1861339D41434931D20F31731CD5FF /* ATTableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ATTableView-prefix.pch"; sourceTree = "<group>"; };
+		56C7B8C654D3A6295CB8CF8CE43A9BAA /* ATTableViewCellProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		5EC68EE76EA20798C5F23A73913A882E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AA24430FAF41B7D737458BB83A59B95 /* ATTableViewCellProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		6E2198D11DFCC02803766081D3479F57 /* HCSStarRatingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCSStarRatingView.m; path = HCSStarRatingView/HCSStarRatingView.m; sourceTree = "<group>"; };
 		74258532EE4059C779C1DB2D4EB0827B /* LoremIpsum.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LoremIpsum.xcconfig; sourceTree = "<group>"; };
 		75D9F7125A838589456A673AB1233A1A /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		79D01F81EA774A52410FE66AC1DC25B3 /* ATTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ATTableView-umbrella.h"; sourceTree = "<group>"; };
 		7B30E446CCEA2E4085C60F15954C4133 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		805162717E85A940B720E5A64FEFEE23 /* ATTableViewSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATTableViewSection.swift; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
 		8D0763A7BDDC303F7D57701D3BD7BBF0 /* HCSStarRatingView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCSStarRatingView-umbrella.h"; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		9BE4F559B1C531D7D9E0243CF0DD473F /* ATTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ATTableView.modulemap; sourceTree = "<group>"; };
 		A2AFE052F1C731C5771AB231E8678DE1 /* HCSStarRatingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HCSStarRatingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58FB8F38D0E0E80BDDC481DA9A63830 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = HCSStarRatingView/Info.plist; sourceTree = "<group>"; };
+		A84C693F7BA690BC8BEBCE312E1B30AC /* ATTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ATTableView-dummy.m"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BE4757B65A4B988616327045997513AB /* ATTableViewSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATTableViewSection.swift; sourceTree = "<group>"; };
+		C65B51B04820A7FCF8B524238A2CBE54 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7DFB2172600867417ECF9924F7F5213 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		C87EC4B1BFEF7363AC2BB6DF37F00109 /* ATTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ATTableView.modulemap; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D0FAD1EDF02691F8B03305596E1862F9 /* ATTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ATTableView-dummy.m"; sourceTree = "<group>"; };
 		D2E609512E726E1AD81EC11683BAB27C /* LoremIpsum.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LoremIpsum.modulemap; sourceTree = "<group>"; };
 		D7AD52456ED17C693A1B038733ED3495 /* HCSStarRatingView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCSStarRatingView-prefix.pch"; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		DAA5F61CECF1ECA59DCE18707D35FAE0 /* ATTableView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ATTableView.xcconfig; sourceTree = "<group>"; };
 		DEEFB2206D61A5D34782A5FEDD5173AA /* HCSStarRatingView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HCSStarRatingView-dummy.m"; sourceTree = "<group>"; };
-		E276085786CF9A336DB201773239FD85 /* ATTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ATTableView-umbrella.h"; sourceTree = "<group>"; };
 		E3691B94D638CF3853DE41FAE28C8F03 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E90758D9CDF0CC890CBFC8C7B3968F11 /* ATTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATTableView.swift; sourceTree = "<group>"; };
+		F24716A80337A52E449B3F2477CEA3E8 /* ATSignal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATSignal.swift; sourceTree = "<group>"; };
+		F7F94BD6F0DE7D50F4B984EE12DCA52D /* ATTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATTableView.swift; sourceTree = "<group>"; };
 		F850B3F991904D3F231D57C3A83129B1 /* LoremIpsum-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum-prefix.pch"; sourceTree = "<group>"; };
 		FB2F0702164A20C089B6DECE7F3AA81B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE9A1B7DDB6AFA22E6D630CB8C11B0F8 /* LoremIpsum-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum-umbrella.h"; sourceTree = "<group>"; };
@@ -134,11 +136,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29F6AD20CDC9A9A3DE8317A5BF304C29 /* Frameworks */ = {
+		1AEC398C8DFEDF3ACD51E2A0F71DAF8F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4244456AA4B0F0C00FA4FC3D927A3DD2 /* Foundation.framework in Frameworks */,
+				D20B02E0313333C11FEFE4CACC571E92 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,20 +212,6 @@
 			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
-		6F5501C49630ACBE6F2101FE6D4FAA02 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9BE4F559B1C531D7D9E0243CF0DD473F /* ATTableView.modulemap */,
-				306F18BA8DCF85FED95ED1FDB8B6F60C /* ATTableView.xcconfig */,
-				D0FAD1EDF02691F8B03305596E1862F9 /* ATTableView-dummy.m */,
-				5C1861339D41434931D20F31731CD5FF /* ATTableView-prefix.pch */,
-				E276085786CF9A336DB201773239FD85 /* ATTableView-umbrella.h */,
-				4CAFABB7CECCECD938E6603710ED3103 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Demo/Pods/Target Support Files/ATTableView";
-			sourceTree = "<group>";
-		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,10 +252,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		96B7414F19587FCCE3BFEC77013F35AA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F24716A80337A52E449B3F2477CEA3E8 /* ATSignal.swift */,
+				F7F94BD6F0DE7D50F4B984EE12DCA52D /* ATTableView.swift */,
+				56C7B8C654D3A6295CB8CF8CE43A9BAA /* ATTableViewCellProtocol.swift */,
+				BE4757B65A4B988616327045997513AB /* ATTableViewSection.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		AD96C33EA3232C6C924B12E9EA0D52E9 /* ATTableView */ = {
+			isa = PBXGroup;
+			children = (
+				96B7414F19587FCCE3BFEC77013F35AA /* Source */,
+				C0D1C78D6E904D08F923AEBF67AE491A /* Support Files */,
+			);
+			name = ATTableView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		ADADC19A0FCBC5FBD72FD7083AAB4FC3 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CFBED085B208D41CEBB3DE0FC9A2320E /* ATTableView */,
+				AD96C33EA3232C6C924B12E9EA0D52E9 /* ATTableView */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -278,16 +287,6 @@
 				75D98FF52E597A11900E131B6C4E1ADA /* Pods */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BBD1B324A71F999CEE3A4930C63E5D71 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				E90758D9CDF0CC890CBFC8C7B3968F11 /* ATTableView.swift */,
-				6AA24430FAF41B7D737458BB83A59B95 /* ATTableViewCellProtocol.swift */,
-				805162717E85A940B720E5A64FEFEE23 /* ATTableViewSection.swift */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -306,6 +305,20 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		C0D1C78D6E904D08F923AEBF67AE491A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C87EC4B1BFEF7363AC2BB6DF37F00109 /* ATTableView.modulemap */,
+				DAA5F61CECF1ECA59DCE18707D35FAE0 /* ATTableView.xcconfig */,
+				A84C693F7BA690BC8BEBCE312E1B30AC /* ATTableView-dummy.m */,
+				4F97D6A5726C861EB6D1BF2F97624F3C /* ATTableView-prefix.pch */,
+				79D01F81EA774A52410FE66AC1DC25B3 /* ATTableView-umbrella.h */,
+				C65B51B04820A7FCF8B524238A2CBE54 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Demo/Pods/Target Support Files/ATTableView";
+			sourceTree = "<group>";
+		};
 		C71E16A2E05CC72555E604E1D968139E /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,16 +326,6 @@
 				6CD98F26EE3D76C6AD01D5CD3CCD938C /* Support Files */,
 			);
 			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		CFBED085B208D41CEBB3DE0FC9A2320E /* ATTableView */ = {
-			isa = PBXGroup;
-			children = (
-				BBD1B324A71F999CEE3A4930C63E5D71 /* Source */,
-				6F5501C49630ACBE6F2101FE6D4FAA02 /* Support Files */,
-			);
-			name = ATTableView;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		E43B6D0F39825E4C5D641A0720BA67B6 /* Products */ = {
@@ -354,11 +357,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3351CB1946C42F485FB170C8439441A1 /* Headers */ = {
+		141792A7D7636043C30C872637092228 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C3B775E9CA2B4C768A812A18EA794C5 /* ATTableView-umbrella.h in Headers */,
+				678AECA78B88365272D2119B252DCB1D /* ATTableView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +402,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6A83BD6017CF82C00699934F721B1A29 /* ATTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAE813B3AB3A20C5B3A17F81948BD47E /* Build configuration list for PBXNativeTarget "ATTableView" */;
+			buildPhases = (
+				1D81CDC324B57E1149670F0EE119C7ED /* Sources */,
+				1AEC398C8DFEDF3ACD51E2A0F71DAF8F /* Frameworks */,
+				141792A7D7636043C30C872637092228 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ATTableView;
+			productName = ATTableView;
+			productReference = 1F3E5396E3D16EA88B7024F5B0AD13D3 /* ATTableView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		6B2F14CD23A664C64B214F4BE6E939ED /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F9EA4DCD6844E887C3EF306B87CAE0F /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
@@ -414,23 +434,6 @@
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
 			productReference = 75D9F7125A838589456A673AB1233A1A /* SwiftyJSON.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7FB4C3A6B4E45E257184356270F5BFAA /* ATTableView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D57852D1552B32CBEAB0528A2247A2E4 /* Build configuration list for PBXNativeTarget "ATTableView" */;
-			buildPhases = (
-				5245FCB012BFC5931A0E47B9DE5523F1 /* Sources */,
-				29F6AD20CDC9A9A3DE8317A5BF304C29 /* Frameworks */,
-				3351CB1946C42F485FB170C8439441A1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ATTableView;
-			productName = ATTableView;
-			productReference = 1F3E5396E3D16EA88B7024F5B0AD13D3 /* ATTableView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AC8432121E84B3F4C381F4D5E457C765 /* LoremIpsum */ = {
@@ -509,7 +512,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7FB4C3A6B4E45E257184356270F5BFAA /* ATTableView */,
+				6A83BD6017CF82C00699934F721B1A29 /* ATTableView */,
 				ADBEA4D6BF9C4F9CE128C39B696CEEDC /* HCSStarRatingView */,
 				AC8432121E84B3F4C381F4D5E457C765 /* LoremIpsum */,
 				AE66D2A89C16D55B691D8BE60728057E /* Pods */,
@@ -519,22 +522,23 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D81CDC324B57E1149670F0EE119C7ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CA9F8C098F8A51543AF6DEBAF858F98 /* ATSignal.swift in Sources */,
+				9460D27C3C09EF4DDCBE4B1E5D837D25 /* ATTableView-dummy.m in Sources */,
+				E64DE046D6D6206FEBAB5847DCB81D1C /* ATTableView.swift in Sources */,
+				2E10A50772722EFA48D2899C1A3C8135 /* ATTableViewCellProtocol.swift in Sources */,
+				1C40C182166BF685DCDE8B13411F1912 /* ATTableViewSection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34E434589529734171AF41BDE56B763F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				66D4F6A0E0B59C1EA811645A601041DD /* Pods-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5245FCB012BFC5931A0E47B9DE5523F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20A8A5D4B71A36E2AE4BC795460DB96F /* ATTableView-dummy.m in Sources */,
-				11D09CFA33F1CCA6207B75CA504B1605 /* ATTableView.swift in Sources */,
-				B8FE21B4721C2A3A3C8717B21C985AEF /* ATTableViewCellProtocol.swift in Sources */,
-				B4B684EB3F4218006578A0E429543303 /* ATTableViewSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +576,7 @@
 		7AB30EFAC3CEB51DF9E3CB2521536200 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ATTableView;
-			target = 7FB4C3A6B4E45E257184356270F5BFAA /* ATTableView */;
+			target = 6A83BD6017CF82C00699934F721B1A29 /* ATTableView */;
 			targetProxy = BF58CA66184510B5725EAF4E153E12FE /* PBXContainerItemProxy */;
 		};
 		AD189C64FDDA43A0F8174A176F88EBB9 /* PBXTargetDependency */ = {
@@ -596,9 +600,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		090052B8E567CE71112E1B01FC626C59 /* Debug */ = {
+		128F126DAB60BF9A22B1DF2641697FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 306F18BA8DCF85FED95ED1FDB8B6F60C /* ATTableView.xcconfig */;
+			baseConfigurationReference = DAA5F61CECF1ECA59DCE18707D35FAE0 /* ATTableView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -678,33 +682,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		7EFE2CA36B99E8FBE77809C577157FC4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 306F18BA8DCF85FED95ED1FDB8B6F60C /* ATTableView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ATTableView/ATTableView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ATTableView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ATTableView/ATTableView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ATTableView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -887,6 +864,33 @@
 			};
 			name = Release;
 		};
+		F235728AC230A54DAF7152C726771C81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAA5F61CECF1ECA59DCE18707D35FAE0 /* ATTableView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ATTableView/ATTableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ATTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ATTableView/ATTableView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ATTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -987,20 +991,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		AAE813B3AB3A20C5B3A17F81948BD47E /* Build configuration list for PBXNativeTarget "ATTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128F126DAB60BF9A22B1DF2641697FF8 /* Debug */,
+				F235728AC230A54DAF7152C726771C81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D02C00D41B152839E089D89B315F1B7B /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF1009C30231AECD8BBCEA869F9A4251 /* Debug */,
 				B525342D07E325FF7196C2F6177FFAA9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D57852D1552B32CBEAB0528A2247A2E4 /* Build configuration list for PBXNativeTarget "ATTableView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				090052B8E567CE71112E1B01FC626C59 /* Debug */,
-				7EFE2CA36B99E8FBE77809C577157FC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
