@@ -74,7 +74,7 @@ let restaurant = Restaurant()
 let hotel = Hotel()
 ... // Some extra initializions
 
-self.tableView.addItems([restaurant, hotel])
+self.tableView.addObjects([restaurant, hotel])
 ```
 
 3.Enjoy it!
@@ -114,7 +114,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'ATTableView', '1.1'
+pod 'ATTableView', '1.2'
 ```
 
 Then, run the following command:

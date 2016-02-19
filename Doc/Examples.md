@@ -106,7 +106,7 @@ let restaurant = Restaurant()
 let hotel = Hotel()
 ... // Some extra initializion
 
-self.tableView.addItems([restaurant, hotel])
+self.tableView.addObjects([restaurant, hotel])
 ```
 
 3.Enjoy it!
