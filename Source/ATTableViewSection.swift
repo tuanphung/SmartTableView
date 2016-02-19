@@ -25,7 +25,7 @@ public class ATTableViewSection {
     let DefaultHeaderHeight: CGFloat = 22
     let DefaultFooterHeight: CGFloat = 22
     
-    var headerTitle: String? {
+    public var headerTitle: String? {
         didSet {
             // Set default header height in case title != nil and headerHeight is not set.
             if let title = self.headerTitle where title != "" && self.headerHeight == 0 {
@@ -34,10 +34,10 @@ public class ATTableViewSection {
         }
     }
     
-    var headerHeight: CGFloat = 0.0
-    var customHeaderView: ((section: Int) -> UIView?)?
+    public var headerHeight: CGFloat = 0.0
+    public var customHeaderView: (() -> UIView?)?
     
-    var footerTitle: String? {
+    public var footerTitle: String? {
         didSet {
             // Set default footer height in case title != nil and footerHeight is not set.
             if let title = self.footerTitle where title != "" && self.footerHeight == 0 {
@@ -46,26 +46,30 @@ public class ATTableViewSection {
         }
     }
         
-    var footerHeight: CGFloat = 0.0
-    var customFooterView: ((section: Int) -> UIView?)?
+    public var footerHeight: CGFloat = 0.0
+    public var customFooterView: (() -> UIView?)?
     
-    var items: [AnyObject]
+    var items: [Any]
     
-    init(headerTitle: String?, footerTitle: String?, items: [AnyObject]) {
+    public init(headerTitle: String?, footerTitle: String?, items: [Any]) {
         self.headerTitle = headerTitle
         self.footerTitle = footerTitle
         self.items = items
     }
     
-    convenience init() {
+    public convenience init() {
         self.init(headerTitle: nil, footerTitle: nil, items: [])
     }
     
-    convenience init(items: [AnyObject]) {
+    public convenience init(items: [Any]) {
         self.init(headerTitle: nil, footerTitle: nil, items: items)
     }
     
-    func addItems(newItems: [AnyObject]?) {
+    public func getItems() -> [Any] {
+        return self.items
+    }
+    
+    func addItems(newItems: [Any]?) {
         guard let newItems = newItems else { return }
         
         self.items.appendContentsOf(newItems)

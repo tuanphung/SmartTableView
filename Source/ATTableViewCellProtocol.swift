@@ -60,3 +60,16 @@ public extension ATTableViewCellProtocol {
     
     static  func height(model: ModelType) -> CGFloat { return UITableViewAutomaticDimension }
 }
+
+public extension UITableViewCell {
+    public func fireSignal(identifier: String, associatedObject: Any?) {
+        var view = self.superview
+        while (view != nil && view!.isKindOfClass(ATTableView.self) == false) {
+            view = view?.superview
+        }
+
+        if let tableView = view as? ATTableView {
+            tableView.fireSignal(ATSignal(identifider: identifier, associatedObject: associatedObject))
+        }
+    }
+}
