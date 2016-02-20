@@ -55,14 +55,12 @@ public class ATTableView: UITableView {
     private var source = [ATTableViewSection]()
     
     // Keep all setup for each CellType registered.
-    private var mappings = [Mapping]()
+    private var mappings = [String: Mapping]()
     
     // Find registed cell type that accept model.
     private func mappingForModel(model: Any) -> Mapping? {
-        for mapping in mappings {
-            if mapping.modelType == model.dynamicType {
-                return mapping
-            }
+        if let mapping = mappings[String(model.dynamicType)] {
+            return mapping
         }
         
         return nil
@@ -183,8 +181,8 @@ public class ATTableView: UITableView {
                 }
             }
             
-            self.mappings.append(Mapping(heightBlock, configureCellBlock, identifier, T.ModelType.self))
-            
+            self.mappings[String(T.ModelType.self)] = Mapping(heightBlock, configureCellBlock, identifier, T.ModelType.self)
+
             if let nibName = cellType.nibName() {
                 self.registerNib(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: identifier)
             }
