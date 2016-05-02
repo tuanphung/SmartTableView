@@ -45,7 +45,7 @@ public class ATTableView: UITableView {
     }
     
     // Keep referrence to models, encapsulated into LazyTableViewSection.
-    public var source = [ATTableViewSection]()
+    private var source = [ATTableViewSection]()
     
     // Keep all setup for each CellType registered.
     private var mappings = [Mapping]()
@@ -117,6 +117,12 @@ public class ATTableView: UITableView {
         
         // Render data
         self.reloadData()
+    }
+    
+    // Get access to section items
+    public func getItems(section: Int?=0) -> [Any] {
+        guard let section: ATTableViewSection = self.source[section] else { return [] }
+        return section.items
     }
     
     // Register cell, setup some code blocks and store them to execute later.
