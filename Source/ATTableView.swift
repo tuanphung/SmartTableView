@@ -45,7 +45,7 @@ public class ATTableView: UITableView {
     }
     
     // Keep referrence to models, encapsulated into LazyTableViewSection.
-    private var source = [ATTableViewSection]()
+    public var source = [ATTableViewSection]()
     
     // Keep all setup for each CellType registered.
     private var mappings = [Mapping]()
