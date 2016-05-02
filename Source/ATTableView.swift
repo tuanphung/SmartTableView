@@ -120,8 +120,11 @@ public class ATTableView: UITableView {
     }
     
     // Get access to section items
-    public func getItems(section: Int?=0) -> [Any] {
-        guard let section: ATTableViewSection = self.source[section] else { return [] }
+    public func getItems(sectionInt: Int?=0) -> [Any] {
+        guard let sectionInt = sectionInt,
+              let section: ATTableViewSection = self.source[sectionInt]
+        else { return [] }
+        
         return section.items
     }
     
